@@ -29,6 +29,17 @@ class EmptyMessageError(AppError):
     code = "empty_message"
 
 
+class MessageTooLongError(AppError):
+    """Message exceeds the configured maximum length."""
+
+    status_code = 422
+    code = "message_too_long"
+
+    def __init__(self, limit: int) -> None:
+        super().__init__(f"Message must be at most {limit} characters long")
+        self.limit = limit
+
+
 class SessionNotFoundError(AppError):
     """Session not found."""
 

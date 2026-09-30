@@ -18,8 +18,15 @@ class ConversationMemory:
     def __init__(self, max_messages: int) -> None:
         self._messages: deque[Message] = deque(maxlen=max_messages)
 
-    def add(self, role: str, content: str, **meta: str | None) -> Message:
-        msg = Message(role=role, content=content, **meta)
+    def add(
+        self,
+        role: str,
+        content: str,
+        *,
+        language: str | None = None,
+        intent: str | None = None,
+    ) -> Message:
+        msg = Message(role=role, content=content, language=language, intent=intent)
         self._messages.append(msg)
         return msg
 

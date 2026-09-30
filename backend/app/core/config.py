@@ -60,6 +60,7 @@ class Settings(BaseSettings):
 
     # --- conversation ---
     MAX_CONTEXT_MESSAGES: int = Field(default=10, ge=1)
+    MAX_MESSAGE_CHARS: int = Field(default=1000, ge=1)
     SESSION_TIMEOUT_MINUTES: int = Field(default=30, ge=1)
 
     # --- business info used in replies (placeholders) ---

@@ -1,0 +1,81 @@
+{
+  "run_id": "run-01-10ep-lr3e-5",
+  "created_at_utc": "2026-09-30T18:12:00Z",
+  "git_commit": "0a20dd71bb52fe7424bfae70119e78fac0aa1d93",
+  "note": "This run was trained directly into trained_models/intent_model before the staging/gate workflow existed; it was measured in place with training/evaluate.py --with-transformer and then moved here and promoted. No retraining was needed.",
+  "config": {
+    "base_model": "xlm-roberta-base",
+    "max_length": 64,
+    "epochs": 10,
+    "batch_size": 16,
+    "learning_rate": 0.00003,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "warmup_steps": 36,
+    "seed": 42,
+    "optimizer": "adamw_torch",
+    "total_steps": 360,
+    "train_n": 565,
+    "val_n": 143,
+    "device": "cpu",
+    "train_runtime_seconds": 471.2
+  },
+  "eval_loss_by_epoch": {
+    "1": 1.944,
+    "2": 1.474,
+    "3": 0.5698,
+    "4": 0.4375,
+    "5": 0.3239,
+    "6": 0.2469,
+    "7": 0.2355,
+    "8": 0.2272,
+    "9": 0.2364,
+    "10": 0.2398
+  },
+  "best_epoch_by_eval_loss": 8,
+  "train_loss_final": 0.6718,
+  "metrics": {
+    "transformer_on_val": {
+      "accuracy": 0.9441,
+      "macro_f1": 0.9442,
+      "weakest_intent": "greeting",
+      "weakest_intent_accuracy": 0.8571,
+      "per_intent": {
+        "cancel_order": 0.95,
+        "contact_support": 1.0,
+        "goodbye": 0.95,
+        "greeting": 0.8571,
+        "payment_issue": 0.9524,
+        "refund": 0.95,
+        "track_order": 0.9524
+      },
+      "per_language": { "en": 0.9608, "es": 1.0, "hi": 0.8889 }
+    },
+    "transformer_on_train": { "accuracy": 0.9894, "macro_f1": 0.9894 },
+    "rules_train_only_on_val": { "accuracy": 0.7413, "macro_f1": 0.756 },
+    "rules_train_only_on_train": { "accuracy": 0.9965, "macro_f1": 0.9965 }
+  },
+  "leakage": {
+    "exact_duplicates_across_split": 0,
+    "exact_duplicates_train_internal": 3,
+    "near_duplicates_val_rows": 7,
+    "near_duplicate_note": "All 7 are deliberate typo-variant near-miss negatives ('order staus' vs 'order status'). No templated leakage."
+  },
+  "gate": {
+    "policy": "held-out accuracy >= 0.90 AND every intent >= 0.80",
+    "held_out_accuracy": 0.9441,
+    "worst_intent_accuracy": 0.8571,
+    "result": "PASS",
+    "promoted_to": "trained_models/intent_model"
+  },
+  "superseded_runs": [
+    {
+      "run_id": "run-00-3ep-lr2e-5",
+      "epochs": 3,
+      "learning_rate": 0.00002,
+      "total_steps": 108,
+      "val_accuracy": 0.3497,
+      "verdict": "under-trained, not a pipeline bug. eval_loss 1.949 at epoch 1 equals the chance level ln(7)=1.946; it was still descending when the run ended."
+    }
+  ]
+}

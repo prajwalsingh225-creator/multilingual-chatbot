@@ -1,0 +1,3542 @@
+[
+  {
+    "text": "hello",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hi",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hey",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hi there",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hey there",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hello chatbot",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hi chatbot",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hey assistant",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "good morning",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "good afternoon",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "good evening",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "greetings",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hello everyone",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "is anyone there",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "anyone online",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "howdy",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "yo whats up",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hi how are you",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hello how are you doing",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "nice to meet you",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hey whats good",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "sup",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hello bot",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hi bot",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "good day to you",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hey there friend",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hello welcome back",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "helo",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hii",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "heyy",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "helo ther",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "good mornign",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "say hello",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "start the conversation",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "hello i hope you are doing well",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "knocking are you there",
+    "label": "greeting",
+    "language": "en"
+  },
+  {
+    "text": "नमस्ते",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्कार",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "सुप्रभाद",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "शुभ प्रभात",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "शुभ दिन",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "शुभ संध्या",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "हैलो",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्ते जी",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्ते दुनिया",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्ते मित्र",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्ते बॉट",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्ते मुझे मदद चाहिए",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "कोई है वहाँ",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "कोई है क्या",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "कोई ऑनलाइन है",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "आप कैसे हैं",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "आप कैसे हो",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "आपका दिन शुभ हो",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "बहुत अच्छा मिलकर",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "हाय बॉट",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "नमस्ते टीम",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "मैं यहाँ नया हूं",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "शुरू करते हैं",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "namaste",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "namaskar",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "namste",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "koi hai kya",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "kya aap online hain",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "kaise ho sab thik",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "hello ji kaise ho aap",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "good morning team",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "haan boliye",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "milte hain phir se",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "naya hun yahan",
+    "label": "greeting",
+    "language": "hi"
+  },
+  {
+    "text": "hola",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola que tal",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola como estas",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buenos dias",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buenos tardes",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buenas tardes",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buenas noches",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "muy buenos dias",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "saludos",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hey chatbot",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola bot",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola equipo",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "saludos a todos",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "estoy aqui",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "alguien ahi",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hay alguien",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola a todos",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "un saludo",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "que onda",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "que tal todo",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "como amanece",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "muy buenas",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buenos dis",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola en linea",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "holaa",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "saludos unn",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buenos dìas",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "que ondas",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola que todo bien",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "saludos amigos",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "buen dia para todos",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "hola equipo de soporte",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "muy buenos diaa",
+    "label": "greeting",
+    "language": "es"
+  },
+  {
+    "text": "bye",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "goodbye",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "bye bye",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "see you",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "see you later",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "see you tomorrow",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "talk to you later",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "catch you later",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "nothing else thanks",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "thanks bye",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "that is all",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "that is all thanks",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "i am done",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "i am done now",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "that will be all",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "have a good day",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "have a nice day",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "ok bye for now",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "i am leaving now",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "i have to go",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "goodbye chatbot",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "bye chatbot",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "sign off",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "logging off",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "we are done here",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "no more questions",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "i am all set thanks",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "take care",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "goodnight",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "good bye",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "byee",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "thx bye",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "i am out",
+    "label": "goodbye",
+    "language": "en"
+  },
+  {
+    "text": "अलविदा",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "अलविदा दोस्त",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "अलविदा बॉट",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "फिर मिलेंगे",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "फिर मिलेंगे भाई",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "फिर मिलेंगे यार",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "बाय बाई",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "बाई बाई",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "शुभ दिन हो",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "शुभ रात्रि",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "धन्यवाद बाय",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "अब मैं जा रहा हूं",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "मैं यहाँ से जा रहा हूं",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "मैं जाने लगा",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "बात के लिए धन्यवाद",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "यही सब था",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "बस इतना ही",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "और कुछ नहीं चाहिए",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे सभी सवाल पूरे हो गए",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "कल मिलते हैं",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "शुभ रहे",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "रखें अपना ख्याल",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "यहाँ समाप्त",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "बाय बॉट",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "अलविदा दोस्ट",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "milte hain phir se",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "chala jata hun",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "bas itna hi",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "shukriya",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "prashna khatam",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "main yahan se ja raha hun",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "milte hain kal",
+    "label": "goodbye",
+    "language": "hi"
+  },
+  {
+    "text": "adios",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "adiós",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "adios amigo",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "adios chatbot",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "adiós bot",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "chao",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "chau",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta luego",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta luego amigo",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta manana",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta manana amigo",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta pronto",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta la vista",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "nos vemos",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "nos vemos pronto",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "nos vemos manana",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "cuidate",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "gracias adios",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "ya no necesito nada",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "eso es todo",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "eso es todo gracias",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "ya termine",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "me voy ahora",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "me voy ya",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "me tengo que ir",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "un saludo",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "suerte",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "no tengo mas preguntas",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "estoy listo gracias",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "buenas noches adios",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "adioss",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "adioz",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "asta luego",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "hasta mananaa",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "chau bot",
+    "label": "goodbye",
+    "language": "es"
+  },
+  {
+    "text": "where is my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "where is my order right now",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "track my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "track order ord-12345",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "order status",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "order status please",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "when will my order arrive",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "has my order shipped",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "has my order shipped yet",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "check my delivery status",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "where is my package",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "where is my parcel",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "my order tracking",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "tracking information for my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "how far is my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "still waiting for my parcel",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "check order status",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "is my order on the way",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "status of order 98765",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "track order 98765",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "where is ord-12345",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "shipment update please",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "delivery update",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "when does my package arrive",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "any update on my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "i am waiting for my delivery",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "my order has not arrived yet",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "where is my delivery",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "track my shipment",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "order delivery status",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "wwhere is my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "wher is my oder",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "trak my order",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "order staus",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "where is my parcel now",
+    "label": "track_order",
+    "language": "en"
+  },
+  {
+    "text": "मेरा ऑर्डर कहाँ है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर कहाँ है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर ट्रैक करो",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे ऑर्डर की स्थिति क्या है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे पैकेज की स्थिति क्या है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर कब तक आएगा",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "क्या मेरा ऑर्डर शिप हो गया",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "डिलीवरी की जानकारी दो",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर कितनी दूर है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "पैकेज कहाँ है मेरा",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर ट्रैकिंग करो प्लीज",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर रास्ते में है क्या",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर ord-12345 कहाँ है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर 98765 ट्रैक करो",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मैं अपने डिलीवरी का इंतजार कर रहा हूं",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर अभी तक नहीं आया",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी डिलीवरी कहाँ है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी शिपमेंट की जानकारी",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "डिलीवरी अपडेट बताओ",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "पैकेज कब तक पहुंचेगा",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे ऑर्डर का क्या हुआ",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर का हाल बताओ",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "कितना समय लगेगा पहुंचने में",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर लंबा समय से नहीं आया",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "सामान कहाँ है मेरा",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "डिलीवरी स्टेटस बताओ",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा पार्सल कहाँ है",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "shpping ho gaya kya",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "mera order kahan hai",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "order kab aayega",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "mera parcel kahan he",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "mera order kaha he",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "bhej diya kya mere order ko",
+    "label": "track_order",
+    "language": "hi"
+  },
+  {
+    "text": "donde esta mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "donde llega mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "quiero rastrear mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "rastrear mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "rastrear mi pedido ord-12345",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "estado de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "estado de mi pedido por favor",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "estado del pedido 98765",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "cuando llega mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "saber cuando llega mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "mi pedido ya fue enviado",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "donde esta mi paquete",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "informacion de seguimiento de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "rastrear pedido ord-12345",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "rastrear pedido 98765",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "aun espero mi paquete",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "revisa el estado de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "mi pedido esta en camino",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "cuando llega mi paquete",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "actualizacion de mi envio",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "entrega de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "cuanto falta para que llegue",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "mi pedido no ha llegado",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "sigue mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "como va mi entrega",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "por donde va mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "hay novedades de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "mi paquete sigue en ruta",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "entrega pendiente",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "quiero saber el estado de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "dondead esti mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "rastrear mi pedidoo",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "estadoo de mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "el pedido llego",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "ya llego mi pedido",
+    "label": "track_order",
+    "language": "es"
+  },
+  {
+    "text": "cancel order ord-12345",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i want to cancel my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "please cancel my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my order please",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "stop my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "can i cancel the order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel order 98765",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i do not want my order anymore",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my purchase",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "please cancel order ord-54321",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i want to cancel this delivery",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my package",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel the order ord-12345",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i want to cancel order ord-12345",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "please stop my delivery",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my parcel",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i want to cancel order 98765",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel order please",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "how do i cancel my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "can you cancel my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my shipment",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i changed my mind cancel the order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "do not deliver this order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my recent order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "call off my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel my box",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel order ord-11111",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancle my order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancle order",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cacel my oder",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "cancel order orr-12345",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "stop the delivery please",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "i want to call off my purchase",
+    "label": "cancel_order",
+    "language": "en"
+  },
+  {
+    "text": "मेरा ऑर्डर रद्द करो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे ऑर्डर को रद्द कर दें",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर रद्द करना है",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "कृपया मेरा ऑर्डर कैंसिल करें",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे यह ऑर्डर नहीं चाहिए",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी डिलीवरी रद्द करो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर ord-12345 कैंसिल करें",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मैं ऑर्डर रोकना चाहता हूं",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "प्लीज ऑर्डर कैंसिल कर दो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी खरीदारी रद्द करें",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा पैकेज कैंसिल करो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा पार्सल रद्द करें",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "डिलीवरी रोक दो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर कैंसिल करने का तरीका बताओ",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "क्या मैं ऑर्डर कैंसिल कर सकता हूं",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर न भेजा जाए",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर 98765 कैंसिल करो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "यह ऑर्डर मुझे नहीं चाहिए",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी खरीद रद्द कर दो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "शिपमेंट रद्द करो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा बॉक्स वापस करो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "कृपया ऑर्डर रद्द कर दें",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी खरीदारी कैंसिल करनी है",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर रद्द",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर रोको",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "यह डिलीवरी मत भेजो",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "cancel kardo mera order",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "mera order cancel karo",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "order cancel karna hai",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "mera delivery cancel karo",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "mera order nahi chahiye",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "cancle my order",
+    "label": "cancel_order",
+    "language": "hi"
+  },
+  {
+    "text": "quiero cancelar mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "quiero cancelar este pedido ord-54321",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancelar mi pedido por favor",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi pedido ord-12345",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela el pedido ord-12345",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "ya no quiero mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "puedo cancelar el pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancelar pedido 98765",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela el pedido 98765",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "deten mi entrega",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "detiene mi entrega por favor",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "quiero cancelar mi compra",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "anula mi pedido por favor",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "anular mi pedido ord-12345",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi paquete",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "por favor cancela mi orden",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "no quiero este pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "como cancelo mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "pueden cancelar mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi envio",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "ya cambie de opinion cancela el pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi compra",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "quiero anular este pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi pedido porfa",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancelalo por favor",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "no me envien este pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi orden de compra",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancelr mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi peddio",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi pedido porfavor cancelalo",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "anular mi pedido",
+    "label": "cancel_order",
+    "language": "es"
+  },
+  {
+    "text": "my payment failed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "my payment did not go through",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment was declined",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "i was charged twice",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "money was deducted but order not placed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "my card was not accepted",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment gateway error",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "transaction failed while paying",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "i got an error during checkout",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "double charged my account",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment pending but order not confirmed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "my money is stuck",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "upi payment did not go through",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment link is not working",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "the payment failed again",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "card declined at checkout",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment could not be completed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "i have been charged but got no order",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "money left my account but nothing came",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment keeps failing",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "the payment page is broken",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "i cannot complete my payment",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment error on my card",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "charged but order failed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "my bank says payment pending",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "why is my payment failing",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment not going through",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "paymentfialed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "paymnt failed",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "my paymet was declined",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "double charged me twice",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "money debited but no order",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "payment is stuck at pending",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "i got a payment error",
+    "label": "payment_issue",
+    "language": "en"
+  },
+  {
+    "text": "मेरा पेमेंट फेल हो गया",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा भुगतान पूरा नहीं हुआ",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पैसे कट गए लेकिन ऑर्डर नहीं हुआ",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा कार्ड स्वीकार नहीं हुआ",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे दो बार पैसे काटे गए",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट गेटवे में एरर आ रहा है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "चेकआउट पर गड़बड़ हो रही है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा पैसा अटका हुआ है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट लिंक काम नहीं कर रहा",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "लेनदेन असफल हो गई",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट नहीं हो पा रहा",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पैसे कट गए ऑर्डर नहीं मिला",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "कार्ड डिक्लाइन हो गया",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट गेटवे में समस्या",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पैसे कट गए पर ऑर्डर कैंसिल",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "भुगतान विफल रहा",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पैसा अटका पड़ा है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "ट्रांजैक्शन फेल हो गई",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "दो बार पैसे कट गए",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा बैंक कहता है भुगतान बाकी",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट क्यों नहीं हो रहा",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट अभी पेंडिंग है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पैसे कटने के बावजूद ऑर्डर नहीं",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "चेकआउट पर एरर आ रहा है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट कंप्लीट नहीं हो पा रहा",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट फेल हो गया दोबारा",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे खाते से पैसे काटे गए पर ऑर्डर नहीं",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट पेज टूटा हुआ है",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "मैं अपना पेमेंट पूरा नहीं कर सकता",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "पेमेंट नेटवर्क एरर",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "mera payment fail ho raha hai",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "pay karke paisa kat gaya order nahi mila",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "mera card decline ho gaya",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "payment link kaam nahi kar raha",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "paisa kat gaya par order nahi bana",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "paymnt fail ho gaya",
+    "label": "payment_issue",
+    "language": "hi"
+  },
+  {
+    "text": "mi pago fallo",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi pago no se ha realizado",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el pago fue rechazado",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "me cobraron dos veces",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "me descontaron el dinero pero no hay pedido",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi tarjeta no fue aceptada",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "error en la pasarela de pago",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "la transaccion fallo al pagar",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "tuve un error al finalizar la compra",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "me cobraron doble",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el enlace de pago no funciona",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi pago esta pendiente",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "no puedo completar mi pago",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi tarjeta fue rechazada",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el pago fallo otra vez",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el cobro fallo",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "me descontaron el dinero y no llego el pedido",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el pago se quedo colgado",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "hay un error en mi pago",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "por que falla mi pago",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el pago no pasa",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "me cobraron y no tengo pedido",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "pago rechazado en el checkout",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi pago no se proceso",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "error al pagar con tarjeta",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "pago fallido",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "pago falloo",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "me cobrarron doble",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "pago rechazado dos veces",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi dinero salio pero no hay pedido",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "la pagina de pago esta rota",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "el pago no se completa",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "mi tarjeta fue declinada",
+    "label": "payment_issue",
+    "language": "es"
+  },
+  {
+    "text": "i want a refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "i would like a refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "please refund my money",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "when will i get my refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund for order ord-12345",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund my order ord-12345",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "return my money please",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "i want my money back",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "how long does a refund take",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "cancel and refund my order",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "please initiate a refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "my refund has not arrived",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "where is my refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund status please",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund status for order 98765",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund order 98765",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund the amount please",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "my money has not been refunded",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "when is the refund processed",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "i want to return the item and get a refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "please refund my payment",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "request a refund for my purchase",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "i need my money returned",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "how do i get a refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "the refund is taking too long",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund my payment of 500",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "where is my money back",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "refund process please",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "want refund",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "money back please",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "my refund is pending",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "when will the money reach my account",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "i want my money back now",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "please return my money",
+    "label": "refund",
+    "language": "en"
+  },
+  {
+    "text": "मुझे रिफंड चाहिए",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे पैसे वापस करें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा पैसा वापस कर दो",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड कब तक मिलेगा",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड का पैसा कब आएगा",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "पैसे वापस करने की प्रक्रिया बताओ",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मैं अपना पैसा वापस चाहता हूं",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड अभी तक नहीं आया",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे ऑर्डर का रिफंड करें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड का स्टेटस बताओ",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "ऑर्डर ord-12345 का रिफंड करें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "कृपया मेरा रिफंड करें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे पैसे वापस चाहिए",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड कितने दिन में आता है",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा ऑर्डर रिफंड कर दो",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "पैसा वापस करने में कितना समय लगता है",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरे पैसे अभी तक नहीं मिले",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड ऑर्डर 98765",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी राशि वापस करें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे अपना पैसा वापस चाहिए",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड कैसे लें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड बहुत देर से पेंडिंग है",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड रिक्वेस्ट करना है",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "पैसे रिफंड करो",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "रिफंड कृपया जारी करें",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे पैसे लौटाने हैं",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा रिफंड नहीं आया",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा पैसा लौटा दो",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "पैसा वापस करो",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "mera refund chahiye",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "mera paisa wapas karna hai",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "refund kab milega",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "mera order refund karo",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "refnd nhi aaya",
+    "label": "refund",
+    "language": "hi"
+  },
+  {
+    "text": "quiero un reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "quiero el dinero de vuelta",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "devuelvanme mi dinero",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "cuando me haran el reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "reembolso del pedido ord-12345",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "reembolsen mi pedido ord-12345",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "reembolso del pedido 98765",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "quiero mi dinero de vuelta",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "me devuelvan el dinero por favor",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "cuanto tarda un reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "cuanto tiempo tarda el reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "cancelen y reembolsen mi pedido",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "mi reembolso no ha llegado",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "donde esta mi reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "aun no me devuelven el dinero",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "solicito un reembolso por favor",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "quiero el reembolso de mi orden",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "cuando llega mi reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "pueden devolverme el dinero",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "no he recibido mi reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "quiero que me devuelvan el dinero",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "necesito un reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "mi dinero no ha sido devuelto",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "como solicito un reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "el reembolso se demora",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "reembolso rapido por favor",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "devuelvan el importe de mi pedido",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "proceso de reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "pedir reembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "rembolso",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "rembolso por favor",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "quiero un rembolso de mi pedido",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "quiero que me devuelvan el importe",
+    "label": "refund",
+    "language": "es"
+  },
+  {
+    "text": "i need help",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "help me please",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i need assistance",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "let me talk to a human",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "contact support",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "someone please call me",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i want to speak to an agent",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "customer service please",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "email me your contact details",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "need to talk to a person",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "can i get human support",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "please connect me to support",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "your chatbot is not helping",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "escalate this to an agent",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "connect me to a real person",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i want to speak to someone",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "please call me back",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "give me your email address",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "is there a live agent",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "human please",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i want a real person",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "your bot is useless",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "let me talk to support",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "need an agent to help",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "contact your team",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i need to speak to customer service",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "please forward my complaint",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "send me your contact info",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "the chatbot cannot help me",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "get me a human",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "talk to a humn",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i hel p",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "i need halp",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "plese connect me to support",
+    "label": "contact_support",
+    "language": "en"
+  },
+  {
+    "text": "मुझे मदद चाहिए",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मदद चाहिए",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे सहायता चाहिए",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "किसी इंसान से बात कराना है",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "सपोर्ट से संपर्क करें",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे कॉल करें",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मैं कॉल करना चाहता हूं",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "ग्राहक सेवा से बात करना है",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "अपने संपर्क विवरण भेजें",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मैं एजेंट से बात करना चाहता हूं",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "चैटबॉट से हल नहीं मिल रहा",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मदद करने वाले को बुलाओ",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "कृपया मुझे एजेंट से जोड़ें",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "किसी व्यक्ति से बात करना है",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे वापस कॉल करें",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "अपना ईमेल पता दें",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "क्या कोई लाइव एजेंट है",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "इंसान चाहिए",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे असली व्यक्ति चाहिए",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "आपका बॉट काम नहीं कर रहा",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "सपोर्ट से बात कराओ",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "एजेंट चाहिए मदद के लिए",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "अपनी टीम से संपर्क कराओ",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "ग्राहक सेवा से बात करनी है",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी शिकायत आगे भेज दो",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "संपर्क जानकारी भेजो",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "बॉट मेरी मदद नहीं कर सकता",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे इंसान से जोड़ो",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "madad chahiye",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "kisi insaan se baat karwao",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "support se contact karo",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "mujhe call kardo",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "chatbot help nhi kar raha",
+    "label": "contact_support",
+    "language": "hi"
+  },
+  {
+    "text": "necesito ayuda",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "ayuda por favor",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "necesito asistencia",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero hablar con una persona",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero hablar con alguien",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero hablar con un agente",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "contactar soporte",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "llamenme por favor",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero que me llamen",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "servicio al cliente por favor",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "hablar con servicio al cliente",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "envienme sus datos de contacto",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero su informacion de contacto",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "necesito hablar con alguien",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "puedo hablar con una persona real",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "el chatbot no me ayuda",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "no me sirve el bot",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "conectenme con una persona real",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "devuelvanme la llamada por favor",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "denme su direccion de correo",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "hay un agente en vivo",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero una persona real",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "necesito un agente",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "contacten a su equipo",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "envien mi reclamacion",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "necesito a alguien que me ayude",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "conectame con soporte",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "necesito soporte humano",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "hay alguien disponible",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "quiero hablar con soporte",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "nesesito ayuda",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "contactenme con un agnete",
+    "label": "contact_support",
+    "language": "es"
+  },
+  {
+    "text": "ayudame por favor",
+    "label": "contact_support",
+    "language": "es"
+  }
+]

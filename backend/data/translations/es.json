@@ -1,0 +1,17 @@
+{
+  "greeting": "¡Hola! ¿En qué puedo ayudarte hoy?",
+  "goodbye": "¡Adiós! Que tengas un excelente día.",
+  "ask_order_id": "Claro, puedo ayudarte. Por favor, comparte tu número de pedido (por ejemplo ORD-12345).",
+  "order_status_processing": "Tu pedido {order_id} se está procesando y se embalará en breve.",
+  "order_status_shipped": "Tu pedido {order_id} ha sido enviado y está en camino.",
+  "order_status_delivered": "Tu pedido {order_id} ha sido entregado. ¡Disfrútalo!",
+  "order_cancelled": "Tu pedido {order_id} ha sido cancelado correctamente.",
+  "order_cannot_cancel": "Lo sentimos, el pedido {order_id} ya no se puede cancelar porque ya ha sido enviado.",
+  "payment_issue": "Siento mucho el problema con el pago. Lo he marcado para revisión para que nuestro equipo lo solucione.",
+  "refund_info": "Se ha solicitado el reembolso del pedido {order_id}. Normalmente llega a tu cuenta en 5-7 días hábiles.",
+  "contact_support": "Puedes contactar con nuestro equipo de soporte en {email} o llamar al {phone}.",
+  "fallback": "Lo siento, no te he entendido bien. ¿Puedes reformular tu petición?",
+  "suggest_track": "Rastrear mi pedido",
+  "suggest_refund": "Solicitar un reembolso",
+  "suggest_support": "Contactar con soporte"
+}
