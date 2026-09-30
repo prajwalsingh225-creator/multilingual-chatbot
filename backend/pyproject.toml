@@ -40,6 +40,9 @@ package = false
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+markers = [
+    "real_model: needs the ~1.1 GB promoted model. Opt in with RUN_MODEL_TESTS=1; never runs in the default suite.",
+]
 
 [tool.ruff]
 line-length = 100

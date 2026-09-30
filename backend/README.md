@@ -36,16 +36,22 @@ uv run uvicorn app.main:app --reload --port 8000 --host 0.0.0.0   # expose to ot
 ## Tests and checks
 
 ```bash
-uv run pytest -q            # full suite
+uv run pytest -q            # full suite, never loads the 1.1 GB model
 uv run pytest -q tests/test_robustness.py   # phase 4.3 behaviours
+RUN_MODEL_TESTS=1 uv run pytest -q -m real_model   # opt-in: exercises the real model
 uv run ruff check .
 uv run mypy app
 ```
 
-The suite points `MODEL_DIR` at a non-existent directory so it never loads the 1.1 GB
-model and runs in a few seconds. Tests that genuinely need a trained model live in
-`tests/test_trained_model.py` and **skip themselves** when
-`trained_models/intent_model` is absent.
+The suite points `MODEL_DIR` at a non-existent directory so it **never** loads the 1.1 GB
+model, even when a trained model is present on disk, and runs in a few seconds.
+
+Tests that genuinely need a trained model live in `tests/test_trained_model.py` and are
+opt-in twice over: they carry the `real_model` marker **and** skip unless
+`RUN_MODEL_TESTS=1` is set *and* `trained_models/intent_model` exists. So the default
+`uv run pytest -q` skips them whether or not a model is promoted, and they load the model
+at most once per session via the shared `real_classifier` fixture. Run them deliberately
+with `RUN_MODEL_TESTS=1 uv run pytest -q -m real_model`.
 
 ## Train a model
 

@@ -1,16 +1,24 @@
 """Tests that exercise a REAL fine-tuned model.
 
-These are skipped when ``trained_models/intent_model`` does not exist, so the normal
-suite stays fast and never depends on a trained artefact. The model is loaded ONCE per
-session: it is ~1.1 GB and loading it per test would dominate the runtime.
+These are opt-in and NEVER run in the default suite. Two conditions must both hold:
 
-The rest of the suite deliberately points ``MODEL_DIR`` at a non-existent path
-(see tests/conftest.py) and therefore always exercises the rule-based classifier.
+1. ``RUN_MODEL_TESTS=1`` is set (the suite must stay fast and must never depend on a
+   ~1.1 GB artefact), and
+2. ``trained_models/intent_model`` actually exists (otherwise there is nothing to test).
+
+Run them with::
+
+    RUN_MODEL_TESTS=1 uv run pytest -m real_model
+
+The model is loaded ONCE per session by the ``real_classifier`` fixture, shared by every
+test in this module. The rest of the suite deliberately points ``MODEL_DIR`` at a
+non-existent path (see tests/conftest.py) and always exercises the rule-based classifier.
 """
 
 from __future__ import annotations
 
 import json
+import os
 import shutil
 from pathlib import Path
 
@@ -24,10 +32,21 @@ from app.nlp.preprocessor import Preprocessor
 
 MODEL_DIR = Path(__file__).resolve().parents[1] / "trained_models" / "intent_model"
 has_model = (MODEL_DIR / "config.json").exists()
-requires_model = pytest.mark.skipif(
-    not has_model,
-    reason="no trained model in trained_models/intent_model (quality gate not promoted)",
+model_tests_enabled = os.environ.get("RUN_MODEL_TESTS") == "1"
+
+_skip_without_model = pytest.mark.skipif(
+    not has_model or not model_tests_enabled,
+    reason=(
+        "real-model tests are opt-in: set RUN_MODEL_TESTS=1 and promote a model to "
+        f"trained_models/intent_model (has_model={has_model}, "
+        f"RUN_MODEL_TESTS={os.environ.get('RUN_MODEL_TESTS')})"
+    ),
 )
+
+
+def requires_model(func):
+    """Tag a test with the ``real_model`` marker *and* the skip gate in one decorator."""
+    return _skip_without_model(pytest.mark.real_model(func))
 
 
 @pytest.fixture(scope="session")
@@ -126,9 +145,9 @@ def test_low_confidence_falls_back_to_fallback_intent(real_classifier, pre) -> N
         assert prediction.intent == FALLBACK_INTENT
 
 
-@requires_model
 def test_health_reports_the_transformer_client(client) -> None:
-    """In the test app MODEL_DIR is fake, so this documents the ``classifier`` field."""
+    """No real model needed: MODEL_DIR is fake here, so this only checks that the
+    ``classifier`` field stays consistent with ``intent_model_loaded``."""
     body = client.get("/api/v1/health").json()
     assert body["classifier"] in {"rules", "transformer"}
     assert body["classifier"] == ("transformer" if body["intent_model_loaded"] else "rules")
