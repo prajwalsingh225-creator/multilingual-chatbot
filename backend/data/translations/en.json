@@ -1,0 +1,17 @@
+{
+  "greeting": "Hello! How can I help you today?",
+  "goodbye": "Goodbye! Have a great day.",
+  "ask_order_id": "Sure, I can help. Please share your order ID (for example ORD-12345).",
+  "order_status_processing": "Your order {order_id} is being processed and will be packed shortly.",
+  "order_status_shipped": "Your order {order_id} has been shipped and is on its way.",
+  "order_status_delivered": "Your order {order_id} has been delivered. Enjoy!",
+  "order_cancelled": "Your order {order_id} has been cancelled successfully.",
+  "order_cannot_cancel": "Sorry, order {order_id} can no longer be cancelled because it has already shipped.",
+  "payment_issue": "I am sorry about the payment problem. I have flagged it for review so our team can fix it.",
+  "refund_info": "The refund for order {order_id} has been requested. It usually reaches your account within 5-7 business days.",
+  "contact_support": "You can reach our support team at {email} or call {phone}.",
+  "fallback": "Sorry, I did not quite get that. Could you rephrase your request?",
+  "suggest_track": "Track my order",
+  "suggest_refund": "Request a refund",
+  "suggest_support": "Contact support"
+}

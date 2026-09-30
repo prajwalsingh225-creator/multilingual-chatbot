@@ -33,9 +33,13 @@ class ContextManager:
             if session.pending_intent:
                 # We asked the user for something; treat this message as the answer.
                 intent, is_follow_up = session.pending_intent, True
-            elif new_entities and session.last_intent not in (None, *_NOT_CONTINUABLE):
+            elif (
+                new_entities
+                and session.last_intent is not None
+                and session.last_intent not in _NOT_CONTINUABLE
+            ):
                 # A bare entity (e.g. an order id) continues the previous topic.
-                intent, is_follow_up = session.last_intent, True  # type: ignore[assignment]
+                intent, is_follow_up = session.last_intent, True
 
         session.entities = {**session.entities, **new_entities}
         return ResolvedContext(

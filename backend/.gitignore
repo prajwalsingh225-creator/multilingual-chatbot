@@ -5,6 +5,22 @@ build/
 dist/
 wheels/
 *.egg-info
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Virtual environments
 .venv
+
+# Secrets and local configuration
+.env
+
+# Local databases
+*.db
+
+# Trained model artefacts (keep the directory itself)
+trained_models/*
+!trained_models/.gitkeep
+
+# OS noise
+.DS_Store

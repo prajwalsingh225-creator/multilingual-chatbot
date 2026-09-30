@@ -1,0 +1,23 @@
+# Fine-tuning hyper-parameters for the multilingual intent classifier.
+# Shared by training/train_intent.py and training/evaluate.py.
+
+data:
+  intents_file: data/raw/intents.json
+  train_file: data/processed/train.json
+  val_ratio: 0.2
+  split_seed: 42
+
+model:
+  # Base checkpoint. Swap for a smaller multilingual model on slow hardware,
+  # e.g. "prajjwal1/bert-tiny" (English-only) or "microsoft/mdeberta-v3-base".
+  base_model: xlm-roberta-base
+  max_length: 64
+
+training:
+  num_labels: 7
+  epochs: 10
+  batch_size: 16
+  learning_rate: 3.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  seed: 42

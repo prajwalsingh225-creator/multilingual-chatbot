@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
@@ -23,6 +25,16 @@ class ConversationRepository:
             record.language = language
             self.db.commit()
 
+    def touch_session(self, session_id: str, language: str | None = None) -> None:
+        """Bump ``last_active`` (used for idle-timeout checks after a restart)."""
+        record = self.get_session(session_id)
+        if record is None:
+            return
+        record.last_active = datetime.now(UTC)
+        if language is not None:
+            record.language = language
+        self.db.commit()
+
     def add_message(
         self,
         session_id: str,
@@ -47,6 +59,16 @@ class ConversationRepository:
     def list_messages(self, session_id: str) -> list[MessageRecord]:
         stmt = select(MessageRecord).where(MessageRecord.session_id == session_id)
         return list(self.db.scalars(stmt.order_by(MessageRecord.id)))
+
+    def recent_messages(self, session_id: str, limit: int) -> list[MessageRecord]:
+        """Return the last ``limit`` messages, oldest first (newest-first query)."""
+        stmt = (
+            select(MessageRecord)
+            .where(MessageRecord.session_id == session_id)
+            .order_by(MessageRecord.id.desc())
+            .limit(limit)
+        )
+        return list(reversed(list(self.db.scalars(stmt))))
 
     def delete_session(self, session_id: str) -> bool:
         record = self.get_session(session_id)

@@ -1,7 +1,7 @@
 [project]
 name = "backend"
 version = "0.1.0"
-description = "Add your description here"
+description = "Multilingual context-aware chatbot API (FastAPI + Transformers)"
 readme = "README.md"
 authors = [
     { name = "Kartik Sharma", email = "kartik.28520@gmail.com" }
@@ -11,7 +11,8 @@ dependencies = [
     "datasets>=5.0.1",
     "fastapi>=0.141.1",
     "langdetect>=1.0.9",
-    "pydantic-settings>=2.15.0",
+    "pydantic-settings>=2.7",
+    "pyyaml>=6.0.1",
     "python-dotenv>=1.2.3",
     "scikit-learn>=1.9.1",
     "sentencepiece>=0.2.2",
@@ -22,16 +23,38 @@ dependencies = [
     "uvicorn[standard]>=0.54.0",
 ]
 
-[project.scripts]
-backend = "backend:main"
-
-[build-system]
-requires = ["uv_build>=0.12.17,<0.13.0"]
-build-backend = "uv_build"
-
 [dependency-groups]
 dev = [
     "httpx>=0.28.1",
+    "mypy>=1.18.2",
     "pytest>=9.1.1",
     "ruff>=0.16.9",
 ]
+training = [
+    "accelerate>=1.10.1",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "RUF"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+packages = ["app"]
+mypy_path = "."
+
+[[tool.mypy.overrides]]
+# langdetect ships no type information upstream.
+module = ["langdetect.*"]
+ignore_missing_imports = true

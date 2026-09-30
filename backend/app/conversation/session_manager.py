@@ -1,7 +1,9 @@
 """In-memory session store with idle timeout.
 
-Messages are also persisted to the database by the pipeline; sessions themselves
-live in memory (a restart starts fresh sessions).
+Messages are persisted to the database by the pipeline. After a process restart the
+in-memory map is empty, so the pipeline asks :meth:`SessionManager.is_expired_at` whether
+the stored ``last_active`` is still fresh and, if so, rebuilds the session with
+:meth:`SessionManager.restore` rather than silently handing the user a brand-new session.
 """
 
 import threading
@@ -11,6 +13,11 @@ from datetime import UTC, datetime, timedelta
 
 from app.conversation.memory import ConversationMemory
 from app.core.exceptions import SessionNotFoundError
+
+
+def _as_utc(value: datetime) -> datetime:
+    """SQLite hands back naive datetimes; treat those as UTC."""
+    return value.replace(tzinfo=UTC) if value.tzinfo is None else value
 
 
 @dataclass
@@ -35,18 +42,48 @@ class SessionManager:
         self._sessions: dict[str, Session] = {}
         self._lock = threading.Lock()
 
+    @property
+    def max_messages(self) -> int:
+        return self._max_messages
+
     def _expired(self, session: Session) -> bool:
         return datetime.now(UTC) - session.last_active > self._timeout
 
+    def is_expired_at(self, last_active: datetime) -> bool:
+        """True when ``last_active`` is older than the idle timeout."""
+        return datetime.now(UTC) - _as_utc(last_active) > self._timeout
+
+    def _purge_expired_locked(self) -> int:
+        stale = [sid for sid, session in self._sessions.items() if self._expired(session)]
+        for sid in stale:
+            del self._sessions[sid]
+        return len(stale)
+
     def create(self, language: str | None = None) -> Session:
+        """Create a session, sweeping expired ones first (lazy periodic purge)."""
         session = Session(
             session_id=uuid.uuid4().hex,
             memory=ConversationMemory(self._max_messages),
             language=language,
         )
         with self._lock:
+            self._purge_expired_locked()
             self._sessions[session.session_id] = session
         return session
+
+    def restore(self, session: Session) -> Session:
+        """Re-insert a session rebuilt from the database after a restart."""
+        with self._lock:
+            self._sessions[session.session_id] = session
+        return session
+
+    def new_session(self, session_id: str, language: str | None = None) -> Session:
+        """Build (but do not register) a blank session shell with a known id."""
+        return Session(
+            session_id=session_id,
+            memory=ConversationMemory(self._max_messages),
+            language=language,
+        )
 
     def get(self, session_id: str) -> Session:
         with self._lock:
@@ -72,7 +109,8 @@ class SessionManager:
 
     def purge_expired(self) -> int:
         with self._lock:
-            stale = [sid for sid, s in self._sessions.items() if self._expired(s)]
-            for sid in stale:
-                del self._sessions[sid]
-            return len(stale)
+            return self._purge_expired_locked()
+
+    def __len__(self) -> int:
+        with self._lock:
+            return len(self._sessions)
