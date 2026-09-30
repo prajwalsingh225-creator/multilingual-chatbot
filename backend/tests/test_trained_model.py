@@ -184,3 +184,74 @@ def test_the_real_model_directory_is_not_emptied_by_a_failed_load(tmp_path) -> N
     with pytest.raises(ModelLoadError):
         load_intent_model(broken)
     assert sorted(p.name for p in MODEL_DIR.iterdir()) == before
+
+# --- slot filling with the real model ---------------------------------------
+
+
+@pytest.fixture
+def model_app(real_classifier, monkeypatch):
+    """An app wired to the REAL classifier, on the normal throwaway test database."""
+    from fastapi.testclient import TestClient
+
+    import app.main as main_module
+    from app.core.config import settings as app_settings
+    from app.pipeline import build_pipeline as real_build_pipeline
+
+    def factory(config):
+        pipeline = real_build_pipeline(config)
+        pipeline.classifier = real_classifier
+        return pipeline
+
+    monkeypatch.setattr(main_module, "build_pipeline", factory)
+    app = main_module.create_app()
+    assert app_settings.MODEL_DIR.name  # the test database comes from conftest
+    with TestClient(app) as client:
+        yield client
+
+
+@requires_model
+def test_a_bare_order_id_fills_the_pending_slot(model_app) -> None:
+    """Regression: the model scores "ORD-12345" as "goodbye" at 0.56, just over the
+    0.55 threshold, which used to drop the pending intent and answer "Goodbye!"."""
+    client = model_app
+    first = client.post("/api/v1/chat", json={"message": "where is my order"}).json()
+    assert first["needs_input"] is True
+
+    second = client.post(
+        "/api/v1/chat",
+        json={"message": "ORD-12345", "session_id": first["session_id"]},
+    ).json()
+    assert second["intent"] == "track_order", second
+    assert second["is_follow_up"] is True
+    assert second["needs_input"] is False
+    assert second["entities"] == {"order_id": "ORD-12345"}
+    assert "Goodbye" not in second["reply"]
+
+
+@requires_model
+def test_a_greeting_while_a_slot_is_pending_is_still_a_greeting(model_app) -> None:
+    """Changing the subject must not be swallowed by the pending intent."""
+    client = model_app
+    first = client.post("/api/v1/chat", json={"message": "where is my order"}).json()
+    second = client.post(
+        "/api/v1/chat", json={"message": "hello", "session_id": first["session_id"]}
+    ).json()
+    assert second["intent"] == "greeting", second
+    assert second["needs_input"] is False
+
+
+@requires_model
+def test_slot_filling_survives_a_restart_with_the_real_model(model_app) -> None:
+    client = model_app
+    first = client.post("/api/v1/chat", json={"message": "where is my order"}).json()
+    session_id = first["session_id"]
+    for stored in list(client.app.state.pipeline.sessions._sessions):
+        client.app.state.pipeline.sessions.delete(stored)
+
+    resumed = client.post(
+        "/api/v1/chat", json={"message": "ORD-12345", "session_id": session_id}
+    ).json()
+    assert resumed["session_id"] == session_id
+    assert resumed["intent"] == "track_order"
+    assert resumed["is_follow_up"] is True
+    assert resumed["entities"] == {"order_id": "ORD-12345"}

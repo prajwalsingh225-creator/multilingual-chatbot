@@ -13,6 +13,17 @@ from app.nlp.intent_classifier import FALLBACK_INTENT, IntentPrediction
 
 _NOT_CONTINUABLE = {FALLBACK_INTENT, "greeting", "goodbye"}
 
+# Which slot each pending intent is waiting for. Used to recognise a slot answer even
+# when the classifier confidently guessed something else for a bare value like
+# "ORD-12345" (the fine-tuned model scores that as "goodbye" at 0.56, just over the
+# 0.55 threshold, which used to lose the pending intent entirely).
+_PENDING_SLOT = {
+    "track_order": "order_id",
+    "cancel_order": "order_id",
+    "refund": "order_id",
+    "payment_issue": "order_id",
+}
+
 
 @dataclass(frozen=True)
 class ResolvedContext:
@@ -29,10 +40,18 @@ class ContextManager:
         intent = prediction.intent
         is_follow_up = False
 
-        if intent == FALLBACK_INTENT:
-            if session.pending_intent:
+        pending = session.pending_intent
+        pending_slot = _PENDING_SLOT.get(pending) if pending else None
+
+        if pending and pending_slot and new_entities.get(pending_slot):
+            # The bot asked for a slot and the user just supplied it. Honour the pending
+            # intent regardless of what the classifier said, so a bare "ORD-12345" fills
+            # the slot instead of being answered as whatever it scored highest.
+            intent, is_follow_up = pending, True
+        elif intent == FALLBACK_INTENT:
+            if pending:
                 # We asked the user for something; treat this message as the answer.
-                intent, is_follow_up = session.pending_intent, True
+                intent, is_follow_up = pending, True
             elif (
                 new_entities
                 and session.last_intent is not None
