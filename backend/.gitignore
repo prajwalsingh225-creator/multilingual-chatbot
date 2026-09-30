@@ -19,8 +19,15 @@ wheels/
 *.db
 
 # Trained model artefacts (keep the directory itself)
+# Weights are ~1.1 GB and must never be committed. Only the small run record
+# (config, metrics, eval-loss curve, gate result) is versioned, because it is the
+# evidence for whether a model was allowed to replace the rule-based fallback.
 trained_models/*
 !trained_models/.gitkeep
+!trained_models/staging/
+!trained_models/staging/*/
+trained_models/staging/*/*
+!trained_models/staging/*/training_meta.json
 
 # OS noise
 .DS_Store
