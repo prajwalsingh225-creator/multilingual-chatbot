@@ -8,6 +8,8 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from starlette.middleware.base import RequestResponseEndpoint
+from starlette.responses import Response
 
 from app.api.routes import chat, health, sessions
 from app.core.config import settings
@@ -46,9 +48,14 @@ def create_app() -> FastAPI:
     )
 
     @app.middleware("http")
-    async def request_id_middleware(request: Request, call_next):  # type: ignore[no-untyped-def]
+    async def request_id_middleware(
+        request: Request, call_next: RequestResponseEndpoint
+    ) -> Response:
         """Attach an X-Request-ID to every request/response and to its log lines."""
         request_id = request.headers.get("X-Request-ID") or new_request_id()
+        # Stash it on request.state too: an app-level Exception handler is installed
+        # *outside* this middleware, so by the time it runs the contextvar is reset.
+        request.state.request_id = request_id
         token = request_id_var.set(request_id)
         started = time.perf_counter()
         try:
@@ -103,14 +110,25 @@ def create_app() -> FastAPI:
 
     @app.exception_handler(Exception)
     async def unhandled_error_handler(request: Request, exc: Exception) -> JSONResponse:
-        """Never leak a stack trace to the client, especially in production."""
-        logger.exception("%s unhandled %s", request.url.path, type(exc).__name__)
-        detail = (
-            "Internal server error"
-            if settings.is_production
-            else f"Internal server error: {type(exc).__name__}: {exc}"
+        """Turn any unexpected exception into a generic 500.
+
+        The full traceback is logged server-side with the request id so the failure is
+        still diagnosable, but the exception type and message are NEVER returned to the
+        client in any environment -- otherwise a development deployment leaks internals
+        that production would have hidden.
+        """
+        request_id = getattr(request.state, "request_id", None) or new_request_id()
+        logger.exception(
+            "%s %s unhandled %s",
+            request_id,
+            request.url.path,
+            type(exc).__name__,
         )
-        return JSONResponse(status_code=500, content={"error": "internal_error", "detail": detail})
+        return JSONResponse(
+            status_code=500,
+            content={"error": "internal_error", "detail": "Internal server error"},
+            headers={"X-Request-ID": request_id},
+        )
 
     app.include_router(health.router, prefix=settings.API_PREFIX)
     app.include_router(chat.router, prefix=settings.API_PREFIX)

@@ -43,6 +43,11 @@ class SessionRecord(Base):
     language: Mapped[str | None] = mapped_column(String(8), nullable=True)
     created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=_now)
     last_active: Mapped[datetime] = mapped_column(UTCDateTime, default=_now)
+    # Slot-filling state. Persisted so a conversation can resume mid-way after a restart
+    # ("where is my order" -> restart -> "ORD-12345" still resolves to track_order).
+    pending_intent: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    # Entities captured so far, stored as a JSON object string.
+    entities: Mapped[str | None] = mapped_column(Text, nullable=True)
 
     messages: Mapped[list["MessageRecord"]] = relationship(
         back_populates="session", cascade="all, delete-orphan", order_by="MessageRecord.id"

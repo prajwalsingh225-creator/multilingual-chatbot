@@ -13,7 +13,9 @@ class LoadedModel:
 
 
 class IntentTransformer:
-    def __init__(self, loaded: LoadedModel, max_length: int = 128) -> None:
+    def __init__(self, loaded: LoadedModel, max_length: int = 64) -> None:
+        """``max_length`` must match the value used during training (config.yaml
+        ``model.max_length``); a mismatch truncates differently at inference time."""
         self._loaded = loaded
         self.max_length = max_length
 

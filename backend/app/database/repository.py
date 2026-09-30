@@ -1,3 +1,4 @@
+import json
 from datetime import UTC, datetime
 
 from sqlalchemy import select
@@ -25,15 +26,40 @@ class ConversationRepository:
             record.language = language
             self.db.commit()
 
-    def touch_session(self, session_id: str, language: str | None = None) -> None:
-        """Bump ``last_active`` (used for idle-timeout checks after a restart)."""
+    def touch_session(
+        self,
+        session_id: str,
+        language: str | None,
+        pending_intent: str | None,
+        entities: dict[str, str],
+    ) -> None:
+        """Persist the per-turn session state and bump ``last_active``.
+
+        Called on EVERY turn so an active conversation never looks expired after a
+        restart, and so slot-filling state survives the process going away. All three
+        state fields are written unconditionally: a cleared ``pending_intent`` (None) is
+        a real update, not a "leave unchanged" signal.
+        """
         record = self.get_session(session_id)
         if record is None:
             return
         record.last_active = datetime.now(UTC)
         if language is not None:
             record.language = language
+        # A cleared slot ("no pending intent") is stored as NULL, not as an empty string.
+        record.pending_intent = pending_intent or None
+        record.entities = json.dumps(entities, ensure_ascii=False) if entities else None
         self.db.commit()
+
+    def load_session_state(self, record: SessionRecord) -> dict[str, str]:
+        """Decode the persisted ``entities`` JSON back into a dict."""
+        if not record.entities:
+            return {}
+        try:
+            loaded = json.loads(record.entities)
+        except json.JSONDecodeError:
+            return {}
+        return {str(k): str(v) for k, v in loaded.items()} if isinstance(loaded, dict) else {}
 
     def add_message(
         self,

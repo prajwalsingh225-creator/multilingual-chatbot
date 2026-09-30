@@ -12,7 +12,7 @@ from app.api.schemas.chat import ChatResponse
 from app.conversation.context_manager import ContextManager
 from app.conversation.session_manager import Session, SessionManager
 from app.core.config import Settings
-from app.core.exceptions import EmptyMessageError, MessageTooLongError
+from app.core.exceptions import EmptyMessageError, MessageTooLongError, SessionNotFoundError
 from app.core.logging import get_logger
 from app.database.repository import ConversationRepository
 from app.intents.handlers import HandlerContext, execute_intent
@@ -44,31 +44,75 @@ class ChatPipeline:
         """Rebuild an in-memory session from the database after a process restart.
 
         Returns ``None`` when the id is unknown or the stored session has expired, in
-        which case the caller starts a genuinely new conversation.
+        which case the caller starts a genuinely new conversation. Expired rows are left
+        in the database: expiry forgets a session, it never deletes history.
         """
         record = repo.get_session(session_id)
         if record is None:
             return None
         last_active = record.last_active or record.created_at
         if self.sessions.is_expired_at(last_active):
-            logger.info("session expired in db, starting a new one")
+            logger.info("session %s expired in db, starting a new one", session_id)
             return None
 
         session = self.sessions.new_session(session_id, language=record.language)
         session.created_at = record.created_at
         session.last_active = last_active
-        for row in repo.recent_messages(session_id, self.sessions.max_messages):
+        session.pending_intent = record.pending_intent
+        session.entities = repo.load_session_state(record)
+
+        # ``recent_messages`` returns oldest-first, so a forward walk with `break`
+        # picks the NEWEST user intent. Reversing it without breaking would leave the
+        # session pointing at the oldest message instead.
+        rows = repo.recent_messages(session_id, self.sessions.max_messages)
+        for row in rows:
             session.memory.add(
                 row.role, row.content, language=row.language, intent=row.intent
             )
-        for row in reversed(repo.recent_messages(session_id, self.sessions.max_messages)):
+        for row in reversed(rows):
             if row.role == "user" and row.intent:
                 session.last_intent = row.intent
+                break
         self.sessions.restore(session)
         logger.info(
-            "rehydrated session from db: restored=%d messages",
+            "rehydrated session %s: restored=%d messages pending_intent=%s entities=%d",
+            session_id,
             len(session.memory),
+            session.pending_intent or "-",
+            len(session.entities),
         )
+        return session
+
+    def _resolve_session(
+        self, session_id: str | None, repo: ConversationRepository
+    ) -> Session:
+        """Look a session up in the required order, creating only as a last resort.
+
+        1. in-memory (evicting it if it has idled out),
+        2. database rehydration (refused if ``last_active`` has expired),
+        3. a brand-new session.
+
+        Nothing is created until both lookups have failed. Creating first and *then*
+        trying to rehydrate would strand an orphan blank session in the manager on every
+        restart-resume.
+        """
+        if session_id:
+            existing = self.sessions.peek(session_id)
+            if existing is not None and self.sessions.is_expired_at(existing.last_active):
+                # Aged out in memory: evict it and do NOT resurrect it from the database
+                # row, which would still look fresh. The conversation is over.
+                self.sessions.delete(session_id)
+                logger.info("session %s expired in memory, starting a new one", session_id)
+            else:
+                try:
+                    return self.sessions.get(session_id)
+                except SessionNotFoundError:
+                    logger.info("session %s not in memory", session_id)
+                restored = self._rehydrate(session_id, repo)
+                if restored is not None:
+                    return restored
+        session = self.sessions.create()
+        repo.create_session(session.session_id)
         return session
 
     def process(self, message: str, session_id: str | None, db: DBSession) -> ChatResponse:
@@ -79,13 +123,7 @@ class ChatPipeline:
             raise MessageTooLongError(self.settings.MAX_MESSAGE_CHARS)
 
         repo = ConversationRepository(db)
-        session, created = self.sessions.get_or_create(session_id)
-        if created:
-            restored = self._rehydrate(session_id, repo) if session_id else None
-            if restored is not None:
-                session = restored
-            else:
-                repo.create_session(session.session_id)
+        session = self._resolve_session(session_id, repo)
 
         detected = self.detector.detect(text)
         language = (
@@ -94,7 +132,6 @@ class ChatPipeline:
             else detected.language
         )
         session.language = language
-        repo.touch_session(session.session_id, language)
 
         processed = self.preprocessor.process(text)
         prediction = self.classifier.predict(processed)
@@ -119,6 +156,16 @@ class ChatPipeline:
         session.memory.add("user", text, language=language, intent=resolved.intent)
         session.memory.add("assistant", reply, language=language)
         session.touch()
+
+        # Persisted AFTER the handler ran, so last_active, pending_intent and entities all
+        # describe the turn that just finished. Writing this earlier stored the PREVIOUS
+        # turn's pending_intent and lost the slot-fill state across a restart.
+        repo.touch_session(
+            session.session_id,
+            language,
+            pending_intent=result.pending_intent,
+            entities=session.entities,
+        )
 
         repo.add_message(
             session.session_id, "user", text, language, resolved.intent, resolved.confidence

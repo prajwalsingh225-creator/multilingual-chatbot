@@ -85,6 +85,11 @@ class SessionManager:
             language=language,
         )
 
+    def peek(self, session_id: str) -> Session | None:
+        """Return the stored session WITHOUT applying the expiry rule or removing it."""
+        with self._lock:
+            return self._sessions.get(session_id)
+
     def get(self, session_id: str) -> Session:
         with self._lock:
             session = self._sessions.get(session_id)
