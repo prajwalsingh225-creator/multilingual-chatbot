@@ -334,6 +334,35 @@ def test_a_500_response_carries_the_request_id(safe_client, monkeypatch) -> None
     assert response.headers["X-Request-ID"] == "boom-500"
 
 
+@pytest.mark.parametrize("debug", [True, False])
+@pytest.mark.parametrize("app_env", ["development", "production"])
+def test_no_environment_ever_leaks_a_traceback(monkeypatch, debug, app_env) -> None:
+    """Regression: Starlette replaces the registered handler with a plain-text
+    traceback when ``FastAPI(debug=True)``, which would leak internals in development
+    and drop the X-Request-ID header. This runs with DEBUG=True exactly like the
+    shipped ``.env``."""
+    monkeypatch.setattr(settings, "DEBUG", debug)
+    monkeypatch.setattr(settings, "APP_ENV", app_env)
+
+    with TestClient(create_app(), raise_server_exceptions=False) as client:
+
+        def boom(*_args: object, **_kwargs: object) -> None:
+            raise RuntimeError("secret internal detail")
+
+        client.app.state.pipeline.responder.build_reply = boom  # type: ignore[method-assign]
+        response = client.post(
+            f"{PREFIX}/chat", json={"message": "hello"}, headers={"X-Request-ID": "x-500"}
+        )
+
+    assert response.status_code == 500
+    assert response.headers["content-type"].startswith("application/json")
+    assert response.json() == {"error": "internal_error", "detail": "Internal server error"}
+    assert "Traceback" not in response.text
+    assert "secret internal detail" not in response.text
+    assert "RuntimeError" not in response.text
+    assert response.headers["X-Request-ID"] == "x-500"
+
+
 def test_the_traceback_is_logged_server_side_with_the_request_id(safe_client, caplog) -> None:
     def boom(*_args: object, **_kwargs: object) -> None:
         raise RuntimeError("secret internal detail")

@@ -34,7 +34,13 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 def create_app() -> FastAPI:
     app = FastAPI(
         title=settings.APP_NAME,
-        debug=settings.DEBUG,
+        # Starlette's ServerErrorMiddleware and ExceptionMiddleware BOTH replace any
+        # registered handler with a plain-text traceback when debug=True
+        # (starlette/middleware/errors.py: `if self.debug: response = self.debug_response(...)`).
+        # That would leak internals in development and drop the X-Request-ID header, so
+        # the ASGI debug flag stays off and settings.DEBUG only controls our own log level.
+        # Error bodies are produced by the handlers below, identically in every environment.
+        debug=False,
         lifespan=lifespan,
         docs_url=None if settings.is_production else "/docs",
         redoc_url=None,

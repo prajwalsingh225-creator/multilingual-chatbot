@@ -10,11 +10,12 @@
         "tags": [
           "health"
         ],
-        "summary": "Health",
+        "summary": "Service health",
+        "description": "Liveness probe plus which intent classifier is actually in use.",
         "operationId": "health_api_v1_health_get",
         "responses": {
           "200": {
-            "description": "Successful Response",
+            "description": "Current service status",
             "content": {
               "application/json": {
                 "schema": {
@@ -33,7 +34,7 @@
         "tags": [
           "chat"
         ],
-        "summary": "Chat",
+        "summary": "Send one chat turn",
         "operationId": "chat_api_v1_chat_post",
         "requestBody": {
           "content": {
@@ -47,7 +48,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successful Response",
+            "description": "The bot's reply plus conversation state for this turn",
             "content": {
               "application/json": {
                 "schema": {
@@ -74,7 +75,7 @@
         "tags": [
           "sessions"
         ],
-        "summary": "Create Session",
+        "summary": "Create a session",
         "description": "Create a new conversation session and persist it.",
         "operationId": "create_session_api_v1_sessions_post",
         "requestBody": {
@@ -89,7 +90,7 @@
         },
         "responses": {
           "201": {
-            "description": "Successful Response",
+            "description": "The new session id",
             "content": {
               "application/json": {
                 "schema": {
@@ -116,7 +117,7 @@
         "tags": [
           "sessions"
         ],
-        "summary": "Get Session",
+        "summary": "Get session transcript",
         "description": "Return the persisted transcript for a session.",
         "operationId": "get_session_api_v1_sessions__session_id__get",
         "parameters": [
@@ -132,7 +133,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful Response",
+            "description": "Every persisted message, oldest first",
             "content": {
               "application/json": {
                 "schema": {
@@ -157,7 +158,7 @@
         "tags": [
           "sessions"
         ],
-        "summary": "Delete Session",
+        "summary": "Delete a session",
         "description": "Delete a session from memory and the database.",
         "operationId": "delete_session_api_v1_sessions__session_id__delete",
         "parameters": [
@@ -173,7 +174,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Successful Response"
+            "description": "No content"
           },
           "422": {
             "description": "Validation Error",
