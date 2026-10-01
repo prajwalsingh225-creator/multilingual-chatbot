@@ -225,9 +225,31 @@ def test_tabs_and_newlines_become_spaces() -> None:
     assert normalize_text("hello\tworld") == "hello world"
 
 
-def test_the_length_limit_has_one_source_of_truth() -> None:
-    """R4f: the schema limit is derived from settings, not hard-coded twice."""
-    assert MAX_MESSAGE_CHARS == settings.MAX_MESSAGE_CHARS
+def test_the_length_limit_has_one_source_of_truth(monkeypatch) -> None:
+    """R4f: the schema limit is derived from settings, not hard-coded twice.
+
+    Comparing two independent literals only proves they happen to agree today. Re-import
+    the schema module with a different configured value and assert the *schema bound*
+    follows it, which is the behaviour that actually matters.
+    """
+    import importlib
+
+    import app.api.schemas.chat as chat_schema
+
+    monkeypatch.setattr(settings, "MAX_MESSAGE_CHARS", 42)
+    reloaded = importlib.reload(chat_schema)
+    try:
+        bound = next(
+            m.max_length
+            for m in reloaded.ChatRequest.model_fields["message"].metadata
+            if hasattr(m, "max_length")
+        )
+        assert bound == 42
+        assert reloaded.MAX_MESSAGE_CHARS == 42
+    finally:
+        monkeypatch.undo()
+        importlib.reload(chat_schema)
+    assert chat_schema.MAX_MESSAGE_CHARS == settings.MAX_MESSAGE_CHARS
 
 
 def test_message_longer_than_the_limit_is_rejected(client) -> None:

@@ -1,6 +1,9 @@
 from pydantic import BaseModel, Field
 
-MAX_MESSAGE_CHARS = 1000
+from app.core.config import settings
+
+# Single source of truth: the limit lives in settings and is imported everywhere else.
+MAX_MESSAGE_CHARS = settings.MAX_MESSAGE_CHARS
 
 
 class ChatRequest(BaseModel):
