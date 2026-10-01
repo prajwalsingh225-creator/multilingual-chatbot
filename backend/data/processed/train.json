@@ -3538,5 +3538,1825 @@
     "text": "ayudame por favor",
     "label": "contact_support",
     "language": "es"
+  },
+  {
+    "text": "!!!",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "###",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "0",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "000000",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "@@@",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "a a a a",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "aaa bbb ccc ddd",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "ah",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "are you a robot",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "are you happy today",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "are you smart",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "asdf",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "asdfghjkl",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "book a dentist appointment",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "book a doctor appointment",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "book a driving lesson",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "book me a hotel room",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "bye now",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "call me an uber",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "call my mother",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "cancel my flight booking",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "cancel my gym contract",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "cancel my insurance policy",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "cancel my subscription to netflix",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "change my flight date",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "change my wifi password",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "close my bank account",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "comment allez vous",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "count to twenty",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "crypto price please",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "do you like pizza",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "do you love me",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "do you sleep",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "eh",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "explain bitcoin to me",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "explain gravity to me",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "find a pharmacy",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "find me a hotel",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "get me directions",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "give me a recipe",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "give me sports scores",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "good night",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "grazie mille",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "guten tag",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "hello world this is a test string",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "hmmm okay",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "how do i boil an egg",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "huh",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "i have a doctor appointment",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "i missed my train",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "i want to learn python",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "ich mochte eine rueckgabe",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "is it going to rain",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "lorem ipsum dolor sit amet",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "make me a sandwich",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "make me laugh",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "merci beaucoup",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "my flight is delayed",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "my head hurts",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "my internet is slow",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "my laptop will not turn on",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "my screen is cracked",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "oh",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "open youtube",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "order me a pizza",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "plan my holiday",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "play jazz",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "qwertyuiop",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "read me a poem",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "recommend a book",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "remind me to wake up",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "renew my driving licence",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "reserve a seat",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "reset my router",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "say something funny",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "schedule a meeting",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "share price of tesla",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "sing me a song",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "solve this equation",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "stock market today",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "suggest a restaurant",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "teach me mathematics",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "tell me a bedtime story",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "tell me a joke about cats",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "tell me about yourself",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "thanks",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "thanks so much",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "the the the",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "translate this",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "turn on the lights",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what can you do",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what do you dream about",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what is 100 divided by 7",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what is your favourite colour",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what time is it",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what's up",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "what's your favourite movie",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "whats the weather like",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "whats up",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "when was the moon landing",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "where am i",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "where do you live",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "where is the atm",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "who was einstein",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "who won the match",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "wie geht es ihnen",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "👍👍",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "😂🤣😆",
+    "label": "out_of_scope",
+    "language": "en"
+  },
+  {
+    "text": "0",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "1000000",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "bonjour",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "grazie mille",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "guten tag",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "ich mochte eine rueckgabe",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "merci beaucoup",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "wie geht es ihnen",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "अकबक",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "अपने बारे में बताओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "अपॉइंटमेंट बुक करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "अभी समय क्या है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "आज तारीख क्या है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "आपसे मिलकर खुशी हुई",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "आभारी हूं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "इंटरनेट पर खोजो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "इंटरनेट स्लो है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "ईडन पार्क कहाँ है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "ईमेल लिख दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "उबर बुलाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "एक कहानी सुनाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "ऐप इंस्टॉल करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कखगघ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कमलकमल",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कविता सुनाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कहां खाना खाएं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कुछ मज़ेदार बताओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कौन जीता मैच",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कौन सी किताब पढ़ूं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "क्या आप मतलब हो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "क्या आप सोते हो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "क्या आपको एहसास होता है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "क्या दो दो चार",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "क्या हुआ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "गगगग",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "गणित समझाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "गाना सुनाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "गुरुत्वाकर्षण क्या है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "गूगल करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "छुट्टी की योजना बनाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "छोटी बात",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "जजजज",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "जीजीजी",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "जो जो जो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "टीवी बंद करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "टेबल बुक कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "टैक्सी बुक करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "डॉक्टर से मिलना है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "डॉक्टर से मिलवा दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "ड्राइविंग लेसन लो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "तबीयत ठीक नहीं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "ताजमहल कहाँ है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "तुम कौन हो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "तुम्हारा नाम क्या",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "तुम्हारा पसंदीदा रंग क्या है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "दवा लिख दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "दवाई की दुकान",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "धन्यवाद",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "नेटफ्लिक्स सब्सक्रिप्शन बंद कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "पढ़ाई का टाइम टेबल बनाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "पत्र लिख दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "पिज़ा बनवा दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "फोन घड़ी लगा दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "फोन चार्ज नहीं हो रहा",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "फ्रेंच में कैसे कहेंगे",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "फ्लाइट की टिकट देखो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "बिटकॉइन समझाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "बीमा पॉलिसी रद्द करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "बीस तक गिनो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "बैंक अकाउंट बंद कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "बॉस को ईमेल कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "भारत की राजधानी क्या है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "माँ को फोन कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मीटिंग शेड्यूल कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे नौकरी दिला दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे पायथन सीखना है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे बुखार है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे याद दिला दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी गाड़ी कहाँ है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मेरी बैग कहाँ रख दी",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मौसम अच्छा है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "यूट्यूब खोलो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "रास्ता बताओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "लाइट जाल दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "लाइसेंस रिन्यू करवाओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "वाईफाई पासवर्ड बदलो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "वो वो वो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "शेयर बाजार कैसा है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "समीकरण हल करो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "सात को सात कितने",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "सिर दर्द है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "सीट बुक कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "सुप्रभात",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "स्क्रीन टूट गई",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "होटल बुक कर दो",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "०",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "१००००००",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "❤️❤️",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "👍👍",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "🙂",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "0",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "1000000",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "actualiza mi sistema",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "adiós ya",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "apaga la tele",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "aparta una silla",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "asdfghjkl",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "ayúdame con otra cosa",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "bonjour merci",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "buenos días",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "busca en internet",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "búscame trabajo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cambia la contraseña del wifi",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi póliza de seguro",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cancela mi suscripción de netflix",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cierra mi cuenta bancaria",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "consulta mi billete de avión",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuenta hasta veinte",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuál es la capital de francia",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuándo llegó el hombre a la luna",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuánto es dos más dos",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuánto tiempo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuéntame un chiste de gatos",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cuéntame un cuento",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cántame una canción",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cómo se hace paella",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dame clases de conducir",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dame de baja del gimnasio",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dame el resultado",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dame indicaciones",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dame una receta",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dime algo divertido",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "duermes",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dónde comer bien",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dónde dejé mi bolso",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dónde está mi coche",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dónde hay un cajero",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "el el el",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "eres feliz",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "eres humano",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "eres inteligente",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "eres un robot",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "escribe un correo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "escribe un cuento",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "esto es una frase de prueba",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "explícame bitcoin",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "explícame las matemáticas",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "gracias",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "hazme un plan de estudio",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "hazme un sándwich",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "hazme una tortilla",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "háblame de ti",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "instala una aplicación",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "lee una,无非",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "llama a mi madre",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "llámame un uber",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "lorem ipsum dolor sit amet",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "manda un correo a mi jefe",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "me duele la cabeza",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "me siento mal",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "mi internet va lento",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "mi portátil no enciende",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "mi teléfono no carga",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "mil gracias",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "mucho gusto",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "pide un taxi",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "planifica mis vacaciones",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "pon jazz",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "pon una alarma",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "programa una reunión",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "quiero una cita médica",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "quién fue einstein",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "quién ganó el partido",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué buen tiempo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué cuentas",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué día es hoy",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué es la gravedad",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué puedes hacer",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué tal",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "recomiéndame una película",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "recuérdame esto",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "recétame algo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "renueva mi carnet de conducir",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "reserva un vuelo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "reserva una habitación de hotel",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "reserva una mesa",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "solo probando 123",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "te gusta la pizza",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "te lo agradezco",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "tengo fiebre",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "test test test",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "tienes sentimientos",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "traduce al inglés",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "traduce esto",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "vuelven a retrasar mi vuelo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "y y y",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "zxcvbnm",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "❤️❤️",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "👍👍",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "🙂",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "####",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "007",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "1000000",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "2 aur 2 kitne hote hain",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "@@@@",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "alarm laga do",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "app install karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "atm kahan hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "baarish hogi kya",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "bhidu bhidu",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "chhutti ka plan banao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "doctor appointment book karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "driving class le lo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "ek kahani sunao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "gaana sunao yaar",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "google karo ise",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "gravity kya hoti hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "hotel ki booking shift karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "india ka capital kya hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "iska matlab kya hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "kahan khana khana hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "koi gaana chalao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "konsi book padhun",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "kuch aur batao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "kuch funny batao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "kun jeeta match",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "kya kar raha hai tu",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "laptop on nahi ho raha",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "licence renew karwao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "light on karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "math samjhao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "mausam kaisa hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "medical store",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "medicine de do",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "mera bag kahan rakh diya",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "meri booking cancel kar do airline wali",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "meri gaadi kahan hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "mujhe bukhar hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "mujhe python seekhna hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "mujhe yaad dila do",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "mummy ko call karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "naukri dilwao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "pasta kaise banate hain",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "phone charge nahi ho raha",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "pizza khilao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "recipe batao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "sar dard hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "score batao",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "share market kaisa chal raha",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "train ki ticket book karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "tum insaan ho kya",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "tum kya kar sakte ho",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "tum log kaise ho",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "tv band karo",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "wifi bahut slow hai",
+    "label": "out_of_scope",
+    "language": "hinglish"
+  },
+  {
+    "text": "youtube kholo",
+    "label": "out_of_scope",
+    "language": "hinglish"
   }
 ]

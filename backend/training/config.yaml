@@ -3,6 +3,10 @@
 
 data:
   intents_file: data/raw/intents.json
+  # Off-topic negatives, an 8th INTERNAL label ("out_of_scope"). Kept in its own file so
+  # intents.json keeps exactly the 7 public intents. At inference out_of_scope is mapped
+  # to the public "fallback" intent. Must never overlap data/eval/ood_eval.json.
+  out_of_scope_file: data/raw/out_of_scope.json
   train_file: data/processed/train.json
   val_ratio: 0.2
   split_seed: 42
@@ -14,7 +18,7 @@ model:
   max_length: 64
 
 training:
-  num_labels: 7
+  num_labels: 8
   epochs: 10
   batch_size: 16
   learning_rate: 3.0e-5

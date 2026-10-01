@@ -17,6 +17,8 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import subprocess
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -28,9 +30,19 @@ from app.nlp.preprocessor import normalize_text
 BASE_DIR = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = Path(__file__).resolve().parent / "config.yaml"
 
+# Internal-only label for off-topic input. It is the 8th training class so the model can
+# *choose* to reject, instead of only rejecting when its confidence happens to dip. At
+# inference it is mapped to the public "fallback" intent; data/raw/intents.json keeps
+# exactly 7 intents so the API contract and the "every intent has a handler" test hold.
+OUT_OF_SCOPE_LABEL = "out_of_scope"
 
-def build_dataset(intents_file: Path, out_file: Path) -> list[dict[str, Any]]:
-    """Flatten ``intents.json`` into ``[{"text", "label", "language"}]`` records.
+
+def build_dataset(
+    intents_file: Path,
+    out_file: Path,
+    out_of_scope_file: Path | None = None,
+) -> list[dict[str, Any]]:
+    """Flatten ``intents.json`` (plus optional negatives) into records.
 
     Writes the records to ``out_file`` as JSON and returns them.
     """
@@ -44,6 +56,16 @@ def build_dataset(intents_file: Path, out_file: Path) -> list[dict[str, Any]]:
                 if not text:
                     continue
                 records.append({"text": text, "label": name, "language": language})
+
+    if out_of_scope_file and Path(out_of_scope_file).exists():
+        negatives = json.loads(Path(out_of_scope_file).read_text(encoding="utf-8"))
+        label = negatives.get("label", OUT_OF_SCOPE_LABEL)
+        for language, examples in negatives["examples"].items():
+            for example in examples:
+                text = normalize_text(example)
+                if not text:
+                    continue
+                records.append({"text": text, "label": label, "language": language})
 
     out_file = Path(out_file)
     out_file.parent.mkdir(parents=True, exist_ok=True)
@@ -81,6 +103,22 @@ def _load_config(path: Path) -> dict[str, Any]:
     return yaml.safe_load(Path(path).read_text(encoding="utf-8")) or {}
 
 
+def _git_commit() -> str:
+    """Record which commit produced a model, so a run is reproducible."""
+    try:
+        out = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=BASE_DIR,
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=True,
+        )
+        return out.stdout.strip()
+    except Exception:
+        return "unknown"
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -94,6 +132,11 @@ def main() -> None:
         "--base-model", type=str, default=None, help="Override config base_model."
     )
     parser.add_argument("--model-dir", type=Path, default=None, help="Override MODEL_DIR.")
+    parser.add_argument(
+        "--no-out-of-scope",
+        action="store_true",
+        help="Train the original 7 classes only (reproduces the pre-OOD baseline).",
+    )
     args = parser.parse_args()
 
     config = _load_config(args.config)
@@ -111,10 +154,24 @@ def main() -> None:
     model_dir = Path(args.model_dir) if args.model_dir else settings.MODEL_DIR
     model_dir.mkdir(parents=True, exist_ok=True)
 
-    records = build_dataset(intents_file, train_file)
+    out_of_scope_file = BASE_DIR / data_cfg.get(
+        "out_of_scope_file", "data/raw/out_of_scope.json"
+    )
+    if args.no_out_of_scope:
+        out_of_scope_file = None
+
+    records = build_dataset(intents_file, train_file, out_of_scope_file)
     train_records, val_records = split_dataset(records, val_ratio, seed)
+
+    label_counts: dict[str, int] = {}
+    for record in records:
+        label_counts[record["label"]] = label_counts.get(record["label"], 0) + 1
     print(f"prepared {len(records)} records -> {train_file}")
     print(f"train={len(train_records)} val={len(val_records)} base_model={base_model}")
+    print("class balance:")
+    for label, count in sorted(label_counts.items()):
+        share = count / len(records)
+        print(f"  {label:<16} {count:>4}  {share:6.2%}")
 
     if args.prepare_only:
         return
@@ -195,6 +252,54 @@ def main() -> None:
     tokenizer.save_pretrained(str(model_dir))
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"saved model + tokenizer to {model_dir} (trained on {device})")
+
+    eval_loss_by_epoch = {}
+    for entry in trainer.state.log_history:
+        if "eval_loss" in entry:
+            eval_loss_by_epoch[str(int(entry.get("epoch", 0)))] = round(
+                float(entry["eval_loss"]), 4
+            )
+
+    meta = {
+        "git_commit": _git_commit(),
+        "created_at_utc": datetime.now(UTC).isoformat(timespec="seconds"),
+        "note": (
+            "Trained with an 8th internal label 'out_of_scope' for off-topic rejection. "
+            "At inference it maps to the public 'fallback' intent; the 7 public intents "
+            "in data/raw/intents.json are unchanged."
+        ),
+        "config": {
+            "base_model": base_model,
+            "max_length": max_length,
+            "epochs": epochs,
+            "batch_size": batch_size,
+            "learning_rate": float(train_cfg.get("learning_rate", 2e-5)),
+            "weight_decay": float(train_cfg.get("weight_decay", 0.01)),
+            "warmup_ratio": float(train_cfg.get("warmup_ratio", 0.1)),
+            "warmup_steps": int(total_steps * float(train_cfg.get("warmup_ratio", 0.1))),
+            "seed": seed,
+            "total_steps": total_steps,
+            "device": device,
+            "train_runtime_seconds": round(float(trainer.state.log_history[-1].get("train_runtime", 0.0)), 1)
+            if isinstance(trainer.state.log_history[-1], dict)
+            else 0.0,
+        },
+        "labels": labels,
+        "num_labels": len(labels),
+        "split": {
+            "records_total": len(records),
+            "train": len(train_records),
+            "val": len(val_records),
+            "val_ratio": val_ratio,
+            "split_seed": seed,
+            "class_balance": dict(sorted(label_counts.items())),
+        },
+        "eval_loss_by_epoch": eval_loss_by_epoch,
+    }
+    (model_dir / "training_meta.json").write_text(
+        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"wrote {model_dir / 'training_meta.json'}")
 
 
 if __name__ == "__main__":

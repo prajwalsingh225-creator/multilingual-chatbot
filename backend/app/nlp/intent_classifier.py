@@ -14,6 +14,11 @@ from app.nlp.preprocessor import ProcessedText, tokenize
 
 FALLBACK_INTENT = "fallback"
 
+# Internal label the model is trained to emit for off-topic input. It never reaches the API:
+# it is mapped to FALLBACK_INTENT in :meth:`IntentClassifier.predict`, and raw_intent keeps the
+# original for logging only. A model trained before this label existed simply never returns it.
+OUT_OF_SCOPE_LABEL = "out_of_scope"
+
 
 @dataclass(frozen=True)
 class IntentPrediction:
@@ -68,7 +73,16 @@ class IntentClassifier:
         else:
             label, conf = self._rule_predict(processed.normalized)
             source = "rules"
-        intent = label if conf >= self.threshold else FALLBACK_INTENT
+        # Two independent reasons to fall back, in order of meaning:
+        #   1. the model explicitly decided this is off-topic (out_of_scope -> fallback),
+        #   2. a confident-looking guess that is still under the safety threshold.
+        # raw_intent always keeps the model's own label so the log line can show it.
+        if label == OUT_OF_SCOPE_LABEL:
+            intent = FALLBACK_INTENT
+        elif conf >= self.threshold:
+            intent = label
+        else:
+            intent = FALLBACK_INTENT
         return IntentPrediction(intent, conf, source, label)
 
     def _rule_predict(self, text: str) -> tuple[str, float]:
