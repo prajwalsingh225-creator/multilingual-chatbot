@@ -4,6 +4,14 @@
     uv run python -m scripts.measure_ood --classifier rules
     uv run python -m scripts.measure_ood --model-dir trained_models/staging/run-02 --sweep
 
+To score an UNSEEN file of real user sentences (same shape: "ood" and "in_domain" arrays
+of {"text", "language", "kind"}) without touching the frozen set:
+
+    uv run python -m scripts.measure_ood --extra-set /path/to/my_user_rows.json --run-id mine
+
+``--extra-set`` is read-only. It is never used for training or for choosing a model or a
+threshold; it exists so real traffic can be checked after the decision is already made.
+
 The eval set in ``data/eval/ood_eval.json`` is frozen: it is never used for training,
 threshold tuning or model selection. This script only reads it.
 
@@ -24,6 +32,7 @@ Machine-readable output is written to ``reports/ood_<run-id>.json``.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import tempfile
@@ -54,6 +63,34 @@ def _bootstrap_env(model_dir: Path) -> None:
 
 def load_eval() -> dict[str, list[dict[str, Any]]]:
     payload = json.loads(EVAL_FILE.read_text(encoding="utf-8"))
+    return {"ood": payload["ood"], "in_domain": payload["in_domain"]}
+
+
+def sha256_of(path: Path) -> str:
+    """Hash of the eval bytes, so a report can never be read against a different file."""
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def load_extra_set(path: Path) -> dict[str, list[dict[str, Any]]]:
+    """Load a caller-supplied unseen file, in the frozen set's own shape.
+
+    This is a measurement-only escape hatch for real user traffic. Nothing here is ever
+    fed to training or used to choose a model; the script only reads the file.
+    """
+    payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(payload, dict) or "ood" not in payload or "in_domain" not in payload:
+        raise SystemExit(
+            f"{path} must be a JSON object with 'ood' and 'in_domain' arrays, each row "
+            '{"text": str, "language": str, "kind": str}'
+        )
+    for split in ("ood", "in_domain"):
+        for row in payload[split]:
+            missing = {"text", "language", "kind"} - set(row)
+            if missing:
+                raise SystemExit(f"{path}: {split} row {row!r} is missing {sorted(missing)}")
+            if not row["text"].strip():
+                raise SystemExit(f"{path}: {split} row has empty text: {row!r}")
+    print(f"loaded extra set: {len(payload['ood'])} ood, {len(payload['in_domain'])} in_domain")
     return {"ood": payload["ood"], "in_domain": payload["in_domain"]}
 
 
@@ -131,6 +168,15 @@ def main() -> None:
     )
     parser.add_argument("--threshold", type=float, default=None, help="Confidence threshold.")
     parser.add_argument("--sweep", action="store_true", help="Sweep the threshold.")
+    parser.add_argument(
+        "--extra-set",
+        type=Path,
+        default=None,
+        help=(
+            "Score an additional UNSEEN user file instead of (or alongside) the frozen set. "
+            "Read-only and never used for training or model selection."
+        ),
+    )
     parser.add_argument("--run-id", type=str, default="baseline", help="Name for the report file.")
     parser.add_argument("--output-dir", type=Path, default=BACKEND_DIR / "reports")
     args = parser.parse_args()
@@ -159,8 +205,18 @@ def main() -> None:
     )
     data = load_eval()
 
+    extra: dict[str, list[dict[str, Any]]] | None = None
+    if args.extra_set is not None:
+        extra = load_extra_set(args.extra_set)
+        print(
+            f"\n*** EXTRA SET {args.extra_set} -- read-only, never trained on, "
+            "never used for model selection ***"
+        )
+
     ood = evaluate(classifier, pre, data["ood"], threshold)
     control = evaluate(classifier, pre, data["in_domain"], threshold)
+    extra_ood = evaluate(classifier, pre, extra["ood"], threshold) if extra else None
+    extra_control = evaluate(classifier, pre, extra["in_domain"], threshold) if extra else None
 
     print(f"\n=== OOD rejection @ threshold {threshold} ({args.classifier}) ===")
     print(f"overall {ood['rejected']}/{ood['total']} = {ood['rate']:.4f}")
@@ -177,16 +233,39 @@ def main() -> None:
     for item in ood["worst_offenders"]:
         print(f"  {item['confidence']:.4f} {item['intent']:<16} {item['text'][:44]}")
 
+    if extra_ood is not None and extra_control is not None:
+        print("\n=== EXTRA SET (unseen; measurement only) ===")
+        print(
+            f"ood rejection {extra_ood['rejected']}/{extra_ood['total']}"
+            f" = {extra_ood['rate']:.4f}"
+        )
+        for lang, counts in extra_ood["per_language"].items():
+            print(f"  {lang:<9} {counts['rejected']}/{counts['total']} = {counts['rate']:.4f}")
+        print(
+            f"false rejection {extra_control['rejected']}/{extra_control['total']}"
+            f" = {extra_control['rate']:.4f}"
+        )
+        for lang, counts in extra_control["per_language"].items():
+            print(f"  {lang:<9} {counts['rejected']}/{counts['total']} = {counts['rate']:.4f}")
+
     report: dict[str, Any] = {
         "run_id": args.run_id,
         "classifier": args.classifier,
         "model_dir": str(model_dir),
         "threshold": threshold,
         "eval_file": str(EVAL_FILE.relative_to(BACKEND_DIR)),
+        "eval_file_sha256": sha256_of(EVAL_FILE),
         "ood": ood,
         "in_domain_control": control,
         "sweep": [],
     }
+    if extra_ood is not None and extra_control is not None:
+        report["extra_set"] = {
+            "path": str(args.extra_set),
+            "note": "unseen input, measurement only, never used for training or selection",
+            "ood": extra_ood,
+            "in_domain_control": extra_control,
+        }
 
     if args.sweep:
         print("\n=== threshold sweep ===")

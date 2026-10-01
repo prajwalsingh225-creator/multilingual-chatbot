@@ -17,7 +17,10 @@ Real-model threshold checks live in tests/test_trained_model.py and stay opt-in.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -37,12 +40,24 @@ from app.nlp.preprocessor import Preprocessor, normalize_text
 
 BACKEND_DIR = Path(__file__).resolve().parents[1]
 EVAL_FILE = BACKEND_DIR / "data" / "eval" / "ood_eval.json"
+
+# SHA-256 of the frozen eval file. Changing the eval set is allowed, but it must be a
+# deliberate act: update this constant and reports/eval_set_provenance.md in the same
+# commit, and say why. Without this, an eval file could be edited after seeing a
+# candidate's scores and the OOD numbers would silently mean something else.
+# Last updated for eval set 1.1: two in-domain track_order rows removed from ood,
+# 26 Hinglish control rows added.
+EVAL_SHA256 = "2e7d577145952b5dd85a661532e7572bb1ad9c582be9ec4500551f87293faf21"
+
 INTENTS_FILE = BACKEND_DIR / "data" / "raw" / "intents.json"
 OUT_OF_SCOPE_FILE = BACKEND_DIR / "data" / "raw" / "out_of_scope.json"
 TRAIN_FILE = BACKEND_DIR / "data" / "processed" / "train.json"
 
 OOD_LANGUAGES = {"en", "hi", "es"}
 ALL_LANGUAGES = {"en", "hi", "es", "hinglish"}
+
+# Unicode word characters, so Devanagari matras stay attached to their consonant.
+_WORD_RE = re.compile(r"\w+", re.UNICODE)
 
 
 def _load(path: Path) -> dict[str, Any]:
@@ -118,6 +133,88 @@ def test_eval_set_covers_the_required_failure_kinds(eval_set) -> None:
     assert required <= kinds, f"missing kinds: {required - kinds}"
 
 
+def test_the_eval_set_matches_its_recorded_hash() -> None:
+    """The frozen eval set must not change silently.
+
+    Every OOD number in the run table is measured against these bytes. If the file moves
+    without EVAL_SHA256 and reports/eval_set_provenance.md being updated in the same
+    commit, the numbers no longer describe the set they claim to describe -- and the most
+    likely reason to edit it is that a candidate scored badly on it.
+    """
+    actual = hashlib.sha256(EVAL_FILE.read_bytes()).hexdigest()
+    assert actual == EVAL_SHA256, (
+        "data/eval/ood_eval.json changed without its recorded hash being updated.\n"
+        f"  recorded: {EVAL_SHA256}\n"
+        f"  actual:   {actual}\n"
+        "If this change is intentional, update EVAL_SHA256 in tests/test_ood.py and the\n"
+        "sha256 + change log in reports/eval_set_provenance.md in the same commit, and\n"
+        "re-measure every baseline that is quoted against this file."
+    )
+
+
+def _word_set(text: str) -> frozenset[str]:
+    """Distinct word tokens, accent-folded, so word order and diacritics do not hide a match."""
+    folded = "".join(
+        c
+        for c in unicodedata.normalize("NFKD", text.casefold())
+        if not unicodedata.combining(c)
+    )
+    return frozenset(_WORD_RE.findall(folded))
+
+
+def _is_content_free(text: str) -> bool:
+    """True for '???', '@@@@###$$$', '🙏' and 'जीजीजीजी' -- no propositional content.
+
+    A row qualifies when it yields no word tokens at all (punctuation, emoji, digits) or
+    exactly one distinct word token that is itself a short run of one or two characters
+    repeated ('जीजीजीजी' -> {'जीजीजीजी'}). Those are deliberate gibberish probes, so a
+    token-set collision with a training row that is also gibberish ('@@@@', 'जीजीजी') is
+    not leakage.
+
+    This test exists for real sentences that were mislabelled -- 'मेरा सामान कहाँ है' is a
+    reordering of 'सामान कहाँ है मेरा' and is a genuine track_order request -- so anything
+    carrying several distinct words is treated as a claim and must be checked.
+    """
+    tokens = _word_set(text)
+    if not tokens:
+        return True
+    if len(tokens) == 1:
+        only = next(iter(tokens))
+        return len(only) <= 2 or len(set(only)) <= 2
+    return False
+
+
+def test_the_eval_set_shares_no_token_multiset_with_training(eval_set) -> None:
+    """Catch eval rows that are permutations of a training example.
+
+    normalize_text casefolds and NFKC-normalises but keeps diacritics, so
+    'dónde está mi paquete' never matched the training example 'donde esta mi paquete'.
+    Both that row and 'मेरा सामान कहाँ है' (a reordering of 'सामान कहाँ है मेरा') were real
+    track_order requests sitting in the ood set, counting correct predictions as failures.
+    """
+    train_texts: set[str] = set()
+    intents = _load(INTENTS_FILE)
+    for intent in intents["intents"]:
+        for examples in intent["examples"].values():
+            train_texts.update(normalize_text(e) for e in examples)
+    negatives = _load(OUT_OF_SCOPE_FILE)
+    for examples in negatives["examples"].values():
+        train_texts.update(normalize_text(e) for e in examples)
+
+    train_word_sets = {_word_set(t) for t in train_texts}
+    offenders: list[tuple[str, str, str]] = []
+    for row in eval_set["ood"] + eval_set["in_domain"]:
+        text = row["text"]
+        if _is_content_free(text):
+            continue
+        if _word_set(normalize_text(text)) in train_word_sets:
+            offenders.append((row["language"], row["kind"], text))
+    assert not offenders, (
+        f"{len(offenders)}/{len(eval_set['ood']) + len(eval_set['in_domain'])} eval rows "
+        f"are a permutation of a training example and are really in-domain: {offenders[:5]}"
+    )
+
+
 def test_the_eval_set_never_overlaps_training_data(eval_set, training_texts) -> None:
     """The frozen eval set must share no normalized text with anything trained on.
 
@@ -125,7 +222,7 @@ def test_the_eval_set_never_overlaps_training_data(eval_set, training_texts) -> 
     """
     eval_texts = {normalize_text(r["text"]) for r in eval_set["ood"] + eval_set["in_domain"]}
     leaked = eval_texts & training_texts
-    assert not leaked, f"eval text leaked into training data: {sorted(leached)[:5]}"
+    assert not leaked, f"eval text leaked into training data: {sorted(leaked)[:5]}"
 
 
 def test_the_eval_set_has_no_internal_duplicates(eval_set) -> None:

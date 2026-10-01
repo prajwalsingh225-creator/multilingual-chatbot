@@ -75,6 +75,14 @@ def build_dataset(
     return records
 
 
+def _train_runtime_seconds(trainer: Any) -> float:
+    """Trainer's final logged train_runtime, or 0.0 when it was never logged."""
+    history = trainer.state.log_history
+    if not history or not isinstance(history[-1], dict):
+        return 0.0
+    return round(float(history[-1].get("train_runtime", 0.0)), 1)
+
+
 def split_dataset(
     records: list[dict[str, Any]], val_ratio: float = 0.2, seed: int = 42
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
@@ -280,9 +288,7 @@ def main() -> None:
             "seed": seed,
             "total_steps": total_steps,
             "device": device,
-            "train_runtime_seconds": round(float(trainer.state.log_history[-1].get("train_runtime", 0.0)), 1)
-            if isinstance(trainer.state.log_history[-1], dict)
-            else 0.0,
+            "train_runtime_seconds": _train_runtime_seconds(trainer),
         },
         "labels": labels,
         "num_labels": len(labels),

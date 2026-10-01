@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "frozen": true,
   "created_for": "phase-5-ood",
   "notes": [
@@ -10,7 +10,10 @@
     "data/raw/out_of_scope.json. tests/test_ood.py enforces both.",
     "in_domain rows are a CONTROL set: they are legitimate chatbot requests written in",
     "styles unlike the training templates (typos, slang, code-switching, extra words).",
-    "A correct system must REJECT the ood rows and ACCEPT the in_domain rows."
+    "A correct system must REJECT the ood rows and ACCEPT the in_domain rows.",
+    "sha256 of these bytes is pinned in tests/test_ood.py::EVAL_SHA256 and explained in",
+    "reports/eval_set_provenance.md. Editing this file REQUIRES updating the hash in the",
+    "same commit, or the hash test fails. Do not edit after seeing a candidate score."
   ],
   "ood": [
     {
@@ -414,7 +417,7 @@
       "kind": "out_of_language"
     },
     {
-      "text": "मेरा सामान कहाँ है",
+      "text": "मेरा सामान कहाँ रखा है",
       "language": "hi",
       "kind": "other_domain"
     },
@@ -584,7 +587,7 @@
       "kind": "out_of_language"
     },
     {
-      "text": "dónde está mi paquete",
+      "text": "dónde está la sucursal del banco más cercana",
       "language": "es",
       "kind": "other_domain"
     },
@@ -1138,6 +1141,136 @@
     {
       "text": "mi pedido sigue sin llegar",
       "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "mere order ka status kya chal raha hai",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "bhejo hua parcel abhi tak kahan hai",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "delivery kis din tak pohchegi yaar",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "tracking number dekh ke batao order ka",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "mera box abhi bhi warehouse me hi hai kya",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "order deliver hone me kitna time lagega",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "order abhi pack nahi hua cancel kr de do please",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "maine 2 order kiye ek wapas lena hai",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "cancel krna hai but COD wala order",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "upi se paisa kat gya lekin app me order dikh nhi rha",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "amount double ho gya debit ho ke",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "payment krne ke baad bhi pending likha hai checkout pe",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "paisa wapas kab milega mujhe btao urgently",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "refund nhi aaya abhi tk contact krke dekho",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "koi real banda se baat krwana hai jaldi",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "ticket raise krwa do mere order ka",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "kya haal bhai subah se",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "ab bas itna hi chodo na",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "shukriya bahut help ho gayi",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "bhaiya meri delivery ka wait kr raha hu",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "jaldi batao parcel kahan pahunchega",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "mera order kahan hai abhi batao na",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "paisa wapis aaya ki nhi check karo",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "order ki delivery ka time kya hoga",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "mera payment ho nhi raha kya karu",
+      "language": "hinglish",
+      "kind": "control"
+    },
+    {
+      "text": "delivery wala boy kab aayega mere ghar",
+      "language": "hinglish",
       "kind": "control"
     }
   ]

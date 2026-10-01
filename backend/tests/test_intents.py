@@ -268,9 +268,27 @@ def test_prepared_dataset_is_in_sync_with_raw_intents(settings_obj) -> None:
             Path(tmpdir) / "train.json",
             settings_obj.DATA_DIR / "raw" / "out_of_scope.json",
         )
-    assert len(on_disk) == len(expected), (
-        f"on-disk train.json has {len(on_disk)} records, "
-        f"regeneration produces {len(expected)}"
+    # Content, not just count: a len() check would pass if one example were dropped and
+    # another added, which is exactly the drift this test exists to catch.
+    def key(record: dict) -> tuple[str, str, str]:
+        return (record["text"], record["label"], record["language"])
+
+    on_disk_keys = {key(r) for r in on_disk}
+    expected_keys = {key(r) for r in expected}
+
+    missing = expected_keys - on_disk_keys
+    unexpected = on_disk_keys - expected_keys
+    assert not missing, (
+        f"{len(missing)}/{len(expected_keys)} regenerated records are absent from "
+        f"train.json, e.g. {sorted(missing)[:5]}"
+    )
+    assert not unexpected, (
+        f"{len(unexpected)}/{len(on_disk_keys)} train.json records are not reproducible "
+        f"from the raw files, e.g. {sorted(unexpected)[:5]}"
+    )
+    assert len(on_disk) == len(expected_keys), (
+        f"train.json has {len(on_disk)} rows but only {len(on_disk_keys)} distinct "
+        f"(text, label, language) tuples; regeneration yields {len(expected_keys)}"
     )
 
 

@@ -30,7 +30,20 @@ from app.models.model_loader import load_intent_model
 from app.nlp.intent_classifier import FALLBACK_INTENT, IntentClassifier
 from app.nlp.preprocessor import Preprocessor
 
-MODEL_DIR = Path(__file__).resolve().parents[1] / "trained_models" / "intent_model"
+
+def _resolve_model_dir() -> Path:
+    """Promoted model by default; INTENT_MODEL_DIR points the suite at a staging run.
+
+    Lets a candidate run be judged against the gate without promoting it, and without
+    touching ``trained_models/intent_model``.
+    """
+    override = os.environ.get("INTENT_MODEL_DIR")
+    if override:
+        return Path(override).expanduser().resolve()
+    return Path(__file__).resolve().parents[1] / "trained_models" / "intent_model"
+
+
+MODEL_DIR = _resolve_model_dir()
 has_model = (MODEL_DIR / "config.json").exists()
 model_tests_enabled = os.environ.get("RUN_MODEL_TESTS") == "1"
 
@@ -352,11 +365,29 @@ def test_ood_rejection_holds_in_every_language(real_classifier, pre) -> None:
 
 @requires_model
 def test_in_domain_control_requests_are_not_rejected(real_classifier, pre) -> None:
-    """Gate: false rejection <= 0.05. The OOD class must not swallow real requests."""
+    """Gate: false rejection <= 0.05 overall. The OOD class must not swallow real requests."""
     _, control = _eval_rows()
     rejected, total, _ = _rejection_rate(real_classifier, pre, control)
     assert total > 0, "the control set must not be empty"
-    assert rejected / total <= FALSE_REJECTION_GATE, f"false rejection {rejected}/{total}"
+    assert rejected / total <= FALSE_REJECTION_GATE, (
+        f"false rejection {rejected}/{total} exceeds {FALSE_REJECTION_GATE}"
+    )
+
+
+@requires_model
+def test_hinglish_control_requests_are_not_rejected(real_classifier, pre) -> None:
+    """The Hinglish gate, measured separately.
+
+    Hinglish control rows are the newest addition to the eval set and the most likely
+    to be swallowed by out_of_scope, so an overall pass must not hide a Hinglish failure.
+    """
+    _, control = _eval_rows()
+    hinglish = [row for row in control if row["language"] == "hinglish"]
+    assert len(hinglish) >= 20, f"need >= 20 Hinglish control rows, have {len(hinglish)}"
+    rejected, total, _ = _rejection_rate(real_classifier, pre, hinglish)
+    assert rejected / total <= FALSE_REJECTION_GATE, (
+        f"Hinglish false rejection {rejected}/{total} exceeds {FALSE_REJECTION_GATE}"
+    )
 
 
 @requires_model
@@ -384,7 +415,8 @@ def test_off_topic_returns_a_helpful_reply_in_every_language(model_app) -> None:
     for message, language in (
         ("tell me a joke about cats", "en"),
         ("अआइईऊ", "hi"),
-        ("dónde está mi paquete", "es"),
+        ("qué hora cierra el banco", "es"),
+        ("bhaiya kya kar raha hai tu", "hinglish"),
     ):
         body = client.post("/api/v1/chat", json={"message": message}).json()
         assert body["intent"] == FALLBACK_INTENT, (message, body)
