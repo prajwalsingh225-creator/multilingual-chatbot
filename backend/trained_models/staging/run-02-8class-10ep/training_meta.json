@@ -1,0 +1,59 @@
+{
+  "git_commit": "350a3c4a90da45770f7f99bf58057f45881cf335",
+  "created_at_utc": "2026-10-01T05:24:05+00:00",
+  "note": "Trained with an 8th internal label 'out_of_scope' for off-topic rejection. At inference it maps to the public 'fallback' intent; the 7 public intents in data/raw/intents.json are unchanged.",
+  "config": {
+    "base_model": "xlm-roberta-base",
+    "max_length": 64,
+    "epochs": 10,
+    "batch_size": 16,
+    "learning_rate": 3e-05,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "warmup_steps": 54,
+    "seed": 42,
+    "total_steps": 540,
+    "device": "cpu",
+    "train_runtime_seconds": 709.5
+  },
+  "labels": [
+    "cancel_order",
+    "contact_support",
+    "goodbye",
+    "greeting",
+    "out_of_scope",
+    "payment_issue",
+    "refund",
+    "track_order"
+  ],
+  "num_labels": 8,
+  "split": {
+    "records_total": 1087,
+    "train": 868,
+    "val": 219,
+    "val_ratio": 0.2,
+    "split_seed": 42,
+    "class_balance": {
+      "cancel_order": 98,
+      "contact_support": 100,
+      "goodbye": 100,
+      "greeting": 103,
+      "out_of_scope": 379,
+      "payment_issue": 103,
+      "refund": 101,
+      "track_order": 103
+    }
+  },
+  "eval_loss_by_epoch": {
+    "1": 1.9039,
+    "2": 1.5055,
+    "3": 0.7707,
+    "4": 0.5411,
+    "5": 0.4469,
+    "6": 0.344,
+    "7": 0.3204,
+    "8": 0.3171,
+    "9": 0.2955,
+    "10": 0.3006
+  }
+}

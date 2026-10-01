@@ -4080,42 +4080,12 @@
     "language": "en"
   },
   {
-    "text": "0",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
     "text": "1000000",
     "label": "out_of_scope",
     "language": "hi"
   },
   {
     "text": "bonjour",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
-    "text": "grazie mille",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
-    "text": "guten tag",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
-    "text": "ich mochte eine rueckgabe",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
-    "text": "merci beaucoup",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
-    "text": "wie geht es ihnen",
     "label": "out_of_scope",
     "language": "hi"
   },
@@ -4570,24 +4540,84 @@
     "language": "hi"
   },
   {
-    "text": "👍👍",
-    "label": "out_of_scope",
-    "language": "hi"
-  },
-  {
     "text": "🙂",
     "label": "out_of_scope",
     "language": "hi"
   },
   {
-    "text": "0",
+    "text": "कल बारिश होगी क्या बताओ",
     "label": "out_of_scope",
-    "language": "es"
+    "language": "hi"
   },
   {
-    "text": "1000000",
+    "text": "मेरा दाँत दर्द कर रहा है",
     "label": "out_of_scope",
-    "language": "es"
+    "language": "hi"
+  },
+  {
+    "text": "मैं बीमार पड़ गया हूं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कल छुट्टी लगी है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "फिल्म कौन सी देखूं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "कौन सा गाना सुनूं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मुझे नौकरी चाहिए",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "पढ़ाई कैसे करूं",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "सेहत के लिए व्यायाम बताओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "सोशल मीडिया पर क्या हो रहा है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "अखबार में क्या खबर है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "क्रिकेट स्कोर बताओ",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "मेरा फोन गिर गया",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "छत टपक रही है",
+    "label": "out_of_scope",
+    "language": "hi"
+  },
+  {
+    "text": "बिजली नहीं आ रही",
+    "label": "out_of_scope",
+    "language": "hi"
   },
   {
     "text": "actualiza mi sistema",
@@ -4606,11 +4636,6 @@
   },
   {
     "text": "aparta una silla",
-    "label": "out_of_scope",
-    "language": "es"
-  },
-  {
-    "text": "asdfghjkl",
     "label": "out_of_scope",
     "language": "es"
   },
@@ -4860,11 +4885,6 @@
     "language": "es"
   },
   {
-    "text": "lorem ipsum dolor sit amet",
-    "label": "out_of_scope",
-    "language": "es"
-  },
-  {
     "text": "manda un correo a mi jefe",
     "label": "out_of_scope",
     "language": "es"
@@ -5065,17 +5085,77 @@
     "language": "es"
   },
   {
-    "text": "❤️❤️",
+    "text": "mañana va a llover",
     "label": "out_of_scope",
     "language": "es"
   },
   {
-    "text": "👍👍",
+    "text": "me duele una muela",
     "label": "out_of_scope",
     "language": "es"
   },
   {
-    "text": "🙂",
+    "text": "estoy enfermo hoy",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "tengo libre mañana",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué película veo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué canción escucho",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "necesito un trabajo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "cómo estudio más",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "hazme ejercicio",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué pasa en redes sociales",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "qué noticias hay",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "dame el marcador",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "se me cayó el móvil",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "gotea el techo",
+    "label": "out_of_scope",
+    "language": "es"
+  },
+  {
+    "text": "no hay luz",
     "label": "out_of_scope",
     "language": "es"
   },
@@ -5086,11 +5166,6 @@
   },
   {
     "text": "007",
-    "label": "out_of_scope",
-    "language": "hinglish"
-  },
-  {
-    "text": "1000000",
     "label": "out_of_scope",
     "language": "hinglish"
   },

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import json
+import tempfile
+from pathlib import Path
 
 import pytest
 
@@ -258,8 +260,18 @@ def test_prepared_dataset_is_in_sync_with_raw_intents(settings_obj) -> None:
     train_file = settings_obj.DATA_DIR / "processed" / "train.json"
     assert train_file.exists(), "run `uv run python -m training.train_intent --prepare-only`"
     on_disk = json.loads(train_file.read_text(encoding="utf-8"))
-    expected = build_dataset(settings_obj.intents_file, train_file)
-    assert len(on_disk) == len(expected)
+    # build_dataset writes out_file as a side effect, so build into a temp path and
+    # compare content, never let a failing assertion clobber the real train.json.
+    with tempfile.TemporaryDirectory() as tmpdir:
+        expected = build_dataset(
+            settings_obj.intents_file,
+            Path(tmpdir) / "train.json",
+            settings_obj.DATA_DIR / "raw" / "out_of_scope.json",
+        )
+    assert len(on_disk) == len(expected), (
+        f"on-disk train.json has {len(on_disk)} records, "
+        f"regeneration produces {len(expected)}"
+    )
 
 
 def test_prepared_dataset_text_is_normalised(settings_obj) -> None:

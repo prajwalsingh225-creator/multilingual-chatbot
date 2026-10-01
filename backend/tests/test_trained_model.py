@@ -294,3 +294,99 @@ def test_slot_filling_survives_a_restart_with_the_real_model(model_app) -> None:
     assert resumed["intent"] == "track_order"
     assert resumed["is_follow_up"] is True
     assert resumed["entities"] == {"order_id": "ORD-12345"}
+
+
+# --- out-of-domain rejection gate (frozen eval set) -----------------------------
+#
+# These encode the phase-5 promotion gate. They run against the FROZEN
+# data/eval/ood_eval.json, which is never trained on, so a regression here is real.
+
+OOD_GATE_OVERALL = 0.85
+OOD_GATE_PER_LANGUAGE = 0.80
+FALSE_REJECTION_GATE = 0.05
+
+
+def _eval_rows() -> tuple[list[dict], list[dict]]:
+    payload = json.loads(
+        (MODEL_DIR.parents[1] / "data" / "eval" / "ood_eval.json").read_text(encoding="utf-8")
+    )
+    return payload["ood"], payload["in_domain"]
+
+
+def _rejection_rate(
+    real_classifier, pre: Preprocessor, rows: list[dict]
+) -> tuple[int, int, dict[str, tuple[int, int]]]:
+    rejected = 0
+    per_language: dict[str, tuple[int, int]] = {}
+    for row in rows:
+        prediction = real_classifier.predict(pre.process(row["text"]))
+        hit = prediction.intent == FALLBACK_INTENT
+        rejected += hit
+        total, ok = per_language.get(row["language"], (0, 0))
+        per_language[row["language"]] = (total + 1, ok + int(hit))
+    return rejected, len(rows), per_language
+
+
+@requires_model
+def test_the_promoted_model_rejects_off_topic_input(real_classifier, pre) -> None:
+    """Gate: OOD rejection >= 0.85 overall on the frozen eval set."""
+    ood, _ = _eval_rows()
+    rejected, total, _ = _rejection_rate(real_classifier, pre, ood)
+    assert rejected / total >= OOD_GATE_OVERALL, f"OOD rejection {rejected}/{total}"
+
+
+@requires_model
+def test_ood_rejection_holds_in_every_language(real_classifier, pre) -> None:
+    """Gate: >= 0.80 in each language, including Hinglish."""
+    ood, _ = _eval_rows()
+    _, _, per_language = _rejection_rate(real_classifier, pre, ood)
+    for language in ("en", "hi", "es", "hinglish"):
+        assert language in per_language, f"eval set has no {language} rows"
+    weak = {
+        language: ok / total
+        for language, (total, ok) in per_language.items()
+        if ok / total < OOD_GATE_PER_LANGUAGE
+    }
+    assert not weak, f"below {OOD_GATE_PER_LANGUAGE}: {weak}"
+
+
+@requires_model
+def test_in_domain_control_requests_are_not_rejected(real_classifier, pre) -> None:
+    """Gate: false rejection <= 0.05. The OOD class must not swallow real requests."""
+    _, control = _eval_rows()
+    rejected, total, _ = _rejection_rate(real_classifier, pre, control)
+    assert total > 0, "the control set must not be empty"
+    assert rejected / total <= FALSE_REJECTION_GATE, f"false rejection {rejected}/{total}"
+
+
+@requires_model
+def test_the_real_model_emits_the_internal_label_that_gets_mapped(real_classifier, pre) -> None:
+    """The mapping is what protects the API; prove the model really produces the label.
+
+    Positive case: the mapped prediction is fallback while raw_intent keeps out_of_scope.
+    """
+    ood, _ = _eval_rows()
+    raw_labels = {
+        real_classifier.predict(pre.process(row["text"])).raw_intent for row in ood
+    }
+    assert "out_of_scope" in raw_labels, (
+        "the model never predicts the internal label, so rejection is still "
+        f"threshold-driven; raw labels seen: {sorted(raw_labels)}"
+    )
+    prediction = real_classifier.predict(pre.process("tell me a joke"))
+    assert prediction.intent == FALLBACK_INTENT
+    assert prediction.raw_intent == "out_of_scope"
+
+
+@requires_model
+def test_off_topic_returns_a_helpful_reply_in_every_language(model_app) -> None:
+    client = model_app
+    for message, language in (
+        ("tell me a joke about cats", "en"),
+        ("अआइईऊ", "hi"),
+        ("dónde está mi paquete", "es"),
+    ):
+        body = client.post("/api/v1/chat", json={"message": message}).json()
+        assert body["intent"] == FALLBACK_INTENT, (message, body)
+        assert body["language"] == language, (message, body)
+        assert body["reply"].strip(), f"empty fallback reply for {message!r}"
