@@ -139,10 +139,30 @@ def test_gibberish_does_not_crash_the_model(real_classifier, pre) -> None:
 
 @requires_model
 def test_low_confidence_falls_back_to_fallback_intent(real_classifier, pre) -> None:
-    """A prediction below the threshold must surface as ``fallback``, not a real intent."""
-    prediction = real_classifier.predict(pre.process("hmm"))
-    if prediction.confidence < settings.INTENT_CONFIDENCE_THRESHOLD:
-        assert prediction.intent == FALLBACK_INTENT
+    """A prediction below the threshold must surface as ``fallback``, not a real intent.
+
+    The threshold branch is driven from the model's own confidence, so this test forces the
+    branch instead of hoping a particular sentence happens to score low: build a second
+    classifier over the SAME model with the threshold raised above the model's confidence.
+    The earlier version asserted only ``if confidence < threshold`` and therefore passed
+    vacuously -- the transformer is very confident even on gibberish, so that condition
+    was never true and the assertion never ran.
+    """
+    text = pre.process("hmm")
+    baseline = real_classifier.predict(text)
+    strict = IntentClassifier(
+        min(baseline.confidence + 0.01, 1.0),
+        real_classifier.transformer,
+        None,
+    )
+    forced = strict.predict(text)
+
+    # Positive case first: the same input is NOT fallback at the normal threshold.
+    assert baseline.intent == baseline.raw_intent
+    # The forced branch: the very same model output, thresholded higher, IS fallback.
+    assert forced.confidence == baseline.confidence
+    assert forced.raw_intent == baseline.raw_intent
+    assert forced.intent == FALLBACK_INTENT
 
 
 def test_health_reports_the_transformer_client(client) -> None:
