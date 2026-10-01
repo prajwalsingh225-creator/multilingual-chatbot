@@ -1,0 +1,313 @@
+{
+  "run_id": "baseline_transformer",
+  "classifier": "transformer",
+  "model_dir": "/Users/prajwalsingh13112001/multilingual-chatbot/backend/trained_models/intent_model",
+  "threshold": 0.55,
+  "eval_file": "data/eval/ood_eval.json",
+  "ood": {
+    "total": 162,
+    "rejected": 19,
+    "rate": 0.1173,
+    "per_language": {
+      "en": {
+        "total": 49,
+        "rejected": 5,
+        "rate": 0.102
+      },
+      "es": {
+        "total": 41,
+        "rejected": 4,
+        "rate": 0.0976
+      },
+      "hi": {
+        "total": 47,
+        "rejected": 8,
+        "rate": 0.1702
+      },
+      "hinglish": {
+        "total": 25,
+        "rejected": 2,
+        "rate": 0.08
+      }
+    },
+    "per_kind": {
+      "chit_chat": {
+        "total": 31,
+        "rejected": 1,
+        "rate": 0.0323
+      },
+      "gibberish": {
+        "total": 24,
+        "rejected": 1,
+        "rate": 0.0417
+      },
+      "numbers_only": {
+        "total": 12,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "other_domain": {
+        "total": 42,
+        "rejected": 10,
+        "rate": 0.2381
+      },
+      "out_of_language": {
+        "total": 9,
+        "rejected": 2,
+        "rate": 0.2222
+      },
+      "short_long": {
+        "total": 17,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "unrelated_task": {
+        "total": 27,
+        "rejected": 5,
+        "rate": 0.1852
+      }
+    },
+    "mean_confidence_of_wrong_accepts": 0.8967,
+    "worst_offenders": [
+      {
+        "text": "je veux un remboursement",
+        "language": "hi",
+        "kind": "out_of_language",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9923673272132874
+      },
+      {
+        "text": "vorrei un rimborso",
+        "language": "es",
+        "kind": "out_of_language",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9922916293144226
+      },
+      {
+        "text": "bonjour je veux un remboursement",
+        "language": "en",
+        "kind": "out_of_language",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9921459555625916
+      },
+      {
+        "text": "where has my parcel gone",
+        "language": "en",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.9904656410217285
+      },
+      {
+        "text": "dónde está mi paquete",
+        "language": "es",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.9901630878448486
+      },
+      {
+        "text": "मेरी जिम सदस्यता रद्द कर दो",
+        "language": "hi",
+        "kind": "other_domain",
+        "intent": "cancel_order",
+        "raw_intent": "cancel_order",
+        "confidence": 0.9901187419891357
+      },
+      {
+        "text": "मेरा सामान कहाँ है",
+        "language": "hi",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.990064799785614
+      },
+      {
+        "text": "cancela mi membresía del gimnasio",
+        "language": "es",
+        "kind": "other_domain",
+        "intent": "cancel_order",
+        "raw_intent": "cancel_order",
+        "confidence": 0.989617109298706
+      },
+      {
+        "text": "tell me a joke",
+        "language": "en",
+        "kind": "chit_chat",
+        "intent": "contact_support",
+        "raw_intent": "contact_support",
+        "confidence": 0.9895755052566528
+      },
+      {
+        "text": "meri flight track kar do",
+        "language": "hinglish",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.9894140958786011
+      }
+    ]
+  },
+  "in_domain_control": {
+    "total": 63,
+    "rejected": 0,
+    "rate": 0.0,
+    "per_language": {
+      "en": {
+        "total": 23,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "es": {
+        "total": 20,
+        "rejected": 0,
+        "rate": 0.0
+      },
+      "hi": {
+        "total": 20,
+        "rejected": 0,
+        "rate": 0.0
+      }
+    },
+    "per_kind": {
+      "control": {
+        "total": 63,
+        "rejected": 0,
+        "rate": 0.0
+      }
+    },
+    "mean_confidence_of_wrong_accepts": 0.9804,
+    "worst_offenders": [
+      {
+        "text": "got the refund yet?",
+        "language": "en",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9926727414131165
+      },
+      {
+        "text": "रिफंड मिला या नहीं",
+        "language": "hi",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9925461411476135
+      },
+      {
+        "text": "i wanna refund this",
+        "language": "en",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9925147891044617
+      },
+      {
+        "text": "refund me pls",
+        "language": "en",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9923858642578125
+      },
+      {
+        "text": "रिफंड कितने दिन में आएगा",
+        "language": "hi",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9921855330467224
+      },
+      {
+        "text": "cuando me devuelven el dinero",
+        "language": "es",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9921785593032837
+      },
+      {
+        "text": "quiero que me devuelvan mi dinero",
+        "language": "es",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9920569062232971
+      },
+      {
+        "text": "पेमेंट लिंक नहीं खुल रहा",
+        "language": "hi",
+        "kind": "control",
+        "intent": "payment_issue",
+        "raw_intent": "payment_issue",
+        "confidence": 0.9916172623634338
+      },
+      {
+        "text": "paymnt failed but money gone",
+        "language": "en",
+        "kind": "control",
+        "intent": "payment_issue",
+        "raw_intent": "payment_issue",
+        "confidence": 0.9915093183517456
+      },
+      {
+        "text": "पैसे वापस कर दो यार",
+        "language": "hi",
+        "kind": "control",
+        "intent": "refund",
+        "raw_intent": "refund",
+        "confidence": 0.9913952946662903
+      }
+    ]
+  },
+  "sweep": [
+    {
+      "threshold": 0.55,
+      "ood_rate": 0.1173,
+      "false_rejection": 0.0
+    },
+    {
+      "threshold": 0.6,
+      "ood_rate": 0.1296,
+      "false_rejection": 0.0
+    },
+    {
+      "threshold": 0.65,
+      "ood_rate": 0.1852,
+      "false_rejection": 0.0
+    },
+    {
+      "threshold": 0.7,
+      "ood_rate": 0.2346,
+      "false_rejection": 0.0
+    },
+    {
+      "threshold": 0.75,
+      "ood_rate": 0.2778,
+      "false_rejection": 0.0
+    },
+    {
+      "threshold": 0.8,
+      "ood_rate": 0.3025,
+      "false_rejection": 0.0
+    },
+    {
+      "threshold": 0.85,
+      "ood_rate": 0.3333,
+      "false_rejection": 0.0159
+    },
+    {
+      "threshold": 0.9,
+      "ood_rate": 0.4074,
+      "false_rejection": 0.0476
+    },
+    {
+      "threshold": 0.95,
+      "ood_rate": 0.4815,
+      "false_rejection": 0.0476
+    }
+  ]
+}

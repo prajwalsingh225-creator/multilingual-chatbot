@@ -1,0 +1,267 @@
+{
+  "run_id": "baseline_rules",
+  "classifier": "rules",
+  "model_dir": "/Users/prajwalsingh13112001/multilingual-chatbot/backend/trained_models/intent_model",
+  "threshold": 0.55,
+  "eval_file": "data/eval/ood_eval.json",
+  "ood": {
+    "total": 162,
+    "rejected": 132,
+    "rate": 0.8148,
+    "per_language": {
+      "en": {
+        "total": 49,
+        "rejected": 40,
+        "rate": 0.8163
+      },
+      "es": {
+        "total": 41,
+        "rejected": 38,
+        "rate": 0.9268
+      },
+      "hi": {
+        "total": 47,
+        "rejected": 35,
+        "rate": 0.7447
+      },
+      "hinglish": {
+        "total": 25,
+        "rejected": 19,
+        "rate": 0.76
+      }
+    },
+    "per_kind": {
+      "chit_chat": {
+        "total": 31,
+        "rejected": 17,
+        "rate": 0.5484
+      },
+      "gibberish": {
+        "total": 24,
+        "rejected": 23,
+        "rate": 0.9583
+      },
+      "numbers_only": {
+        "total": 12,
+        "rejected": 12,
+        "rate": 1.0
+      },
+      "other_domain": {
+        "total": 42,
+        "rejected": 31,
+        "rate": 0.7381
+      },
+      "out_of_language": {
+        "total": 9,
+        "rejected": 9,
+        "rate": 1.0
+      },
+      "short_long": {
+        "total": 17,
+        "rejected": 13,
+        "rate": 0.7647
+      },
+      "unrelated_task": {
+        "total": 27,
+        "rejected": 27,
+        "rate": 1.0
+      }
+    },
+    "mean_confidence_of_wrong_accepts": 0.6839,
+    "worst_offenders": [
+      {
+        "text": "मेरा सामान कहाँ है",
+        "language": "hi",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 1.0
+      },
+      {
+        "text": "dónde está mi paquete",
+        "language": "es",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 1.0
+      },
+      {
+        "text": "आप सुनाइए कैसे हैं",
+        "language": "hi",
+        "kind": "chit_chat",
+        "intent": "greeting",
+        "raw_intent": "greeting",
+        "confidence": 0.9
+      },
+      {
+        "text": "how are you",
+        "language": "en",
+        "kind": "chit_chat",
+        "intent": "greeting",
+        "raw_intent": "greeting",
+        "confidence": 0.85
+      },
+      {
+        "text": "good morning to you",
+        "language": "en",
+        "kind": "chit_chat",
+        "intent": "greeting",
+        "raw_intent": "greeting",
+        "confidence": 0.8
+      },
+      {
+        "text": "cómo estás",
+        "language": "es",
+        "kind": "chit_chat",
+        "intent": "greeting",
+        "raw_intent": "greeting",
+        "confidence": 0.8
+      },
+      {
+        "text": "where is the nearest bank",
+        "language": "en",
+        "kind": "other_domain",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.76
+      },
+      {
+        "text": "pleasure to meet you",
+        "language": "en",
+        "kind": "chit_chat",
+        "intent": "greeting",
+        "raw_intent": "greeting",
+        "confidence": 0.75
+      },
+      {
+        "text": "मेरी जिम सदस्यता रद्द कर दो",
+        "language": "hi",
+        "kind": "other_domain",
+        "intent": "cancel_order",
+        "raw_intent": "cancel_order",
+        "confidence": 0.7467
+      },
+      {
+        "text": "shukriya bhai bahut",
+        "language": "hinglish",
+        "kind": "chit_chat",
+        "intent": "goodbye",
+        "raw_intent": "goodbye",
+        "confidence": 0.7333
+      }
+    ]
+  },
+  "in_domain_control": {
+    "total": 63,
+    "rejected": 16,
+    "rate": 0.254,
+    "per_language": {
+      "en": {
+        "total": 23,
+        "rejected": 7,
+        "rate": 0.3043
+      },
+      "es": {
+        "total": 20,
+        "rejected": 3,
+        "rate": 0.15
+      },
+      "hi": {
+        "total": 20,
+        "rejected": 6,
+        "rate": 0.3
+      }
+    },
+    "per_kind": {
+      "control": {
+        "total": 63,
+        "rejected": 16,
+        "rate": 0.254
+      }
+    },
+    "mean_confidence_of_wrong_accepts": 0.7411,
+    "worst_offenders": [
+      {
+        "text": "my order. where is it",
+        "language": "en",
+        "kind": "control",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.92
+      },
+      {
+        "text": "मेरा पार्सल कहाँ है भाई",
+        "language": "hi",
+        "kind": "control",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.92
+      },
+      {
+        "text": "quiero cancelar mi pedido porfa",
+        "language": "es",
+        "kind": "control",
+        "intent": "cancel_order",
+        "raw_intent": "cancel_order",
+        "confidence": 0.92
+      },
+      {
+        "text": "अच्छा फिर मिलेंगे",
+        "language": "hi",
+        "kind": "control",
+        "intent": "goodbye",
+        "raw_intent": "goodbye",
+        "confidence": 0.8667
+      },
+      {
+        "text": "oye donde esta mi pedido porfa",
+        "language": "es",
+        "kind": "control",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.8667
+      },
+      {
+        "text": "hola que onda",
+        "language": "es",
+        "kind": "control",
+        "intent": "greeting",
+        "raw_intent": "greeting",
+        "confidence": 0.8667
+      },
+      {
+        "text": "quiero hablar con una persona real por favor",
+        "language": "es",
+        "kind": "control",
+        "intent": "contact_support",
+        "raw_intent": "contact_support",
+        "confidence": 0.85
+      },
+      {
+        "text": "wanna cancel my order plz",
+        "language": "en",
+        "kind": "control",
+        "intent": "cancel_order",
+        "raw_intent": "cancel_order",
+        "confidence": 0.84
+      },
+      {
+        "text": "cancel my order its urgent",
+        "language": "en",
+        "kind": "control",
+        "intent": "cancel_order",
+        "raw_intent": "cancel_order",
+        "confidence": 0.84
+      },
+      {
+        "text": "mi pedido sigue sin llegar",
+        "language": "es",
+        "kind": "control",
+        "intent": "track_order",
+        "raw_intent": "track_order",
+        "confidence": 0.84
+      }
+    ]
+  },
+  "sweep": []
+}

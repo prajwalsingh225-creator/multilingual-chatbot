@@ -1,0 +1,1144 @@
+{
+  "version": "1.0",
+  "frozen": true,
+  "created_for": "phase-5-ood",
+  "notes": [
+    "FROZEN EVAL SET. Written BEFORE any out_of_scope training negatives existed.",
+    "Never used for training, threshold tuning or model selection.",
+    "These sentences are authored to probe off-topic input; they are NOT drawn from",
+    "data/raw/intents.json and must share no normalized text with it or with",
+    "data/raw/out_of_scope.json. tests/test_ood.py enforces both.",
+    "in_domain rows are a CONTROL set: they are legitimate chatbot requests written in",
+    "styles unlike the training templates (typos, slang, code-switching, extra words).",
+    "A correct system must REJECT the ood rows and ACCEPT the in_domain rows."
+  ],
+  "ood": [
+    {
+      "text": "???",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "asdf qwerty",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "......",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "🙂🙂🙂",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "hjkl;'",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "@@@@###$$$",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "zxqwv mnbvc lkjhg",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "!!!@@@###",
+      "language": "en",
+      "kind": "gibberish"
+    },
+    {
+      "text": "tell me a joke",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "how are you",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "what's your name",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "thanks a lot",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "who are you",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "do you have feelings",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "say something funny please",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "pleasure to meet you",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "good morning to you",
+      "language": "en",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "what's the weather",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "book me a flight",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "translate this to French",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "write a poem",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "set an alarm for 7am",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "play some music",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "what is 2 plus 2",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "give me a recipe for pasta",
+      "language": "en",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "where is the nearest bank",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "my phone battery is draining",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "cancel my gym membership",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "track my flight",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "my dentist appointment is tomorrow",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "reset my internet router",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "book a taxi to the airport",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "renew my passport",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "change my flight seat",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "my laptop screen is cracked",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "schedule a dentist cleaning",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "bonjour je veux un remboursement",
+      "language": "en",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "ich mochte eine rueckgabe bitte",
+      "language": "en",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "guten tag wie geht es ihnen",
+      "language": "en",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "grazie mille per tutto",
+      "language": "en",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "where has my parcel gone",
+      "language": "en",
+      "kind": "other_domain"
+    },
+    {
+      "text": "ok",
+      "language": "en",
+      "kind": "short_long"
+    },
+    {
+      "text": "hmm",
+      "language": "en",
+      "kind": "short_long"
+    },
+    {
+      "text": "wow",
+      "language": "en",
+      "kind": "short_long"
+    },
+    {
+      "text": "1234567890123456789012345678901234567890",
+      "language": "en",
+      "kind": "short_long"
+    },
+    {
+      "text": "प्रश्न है",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "क्या क्या बकवास",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "अजीब सा लिखा है यह",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "सीधे बात पर आते हैं",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "हिन्दी में",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "जीजीजीजी",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "फफफफफ",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "अआइईऊ",
+      "language": "hi",
+      "kind": "gibberish"
+    },
+    {
+      "text": "एक चुटकुला सुनाओ",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "आप सुनाइए कैसे हैं",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "आपका नाम क्या है",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "धन्यवाद बहुत",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "आप कौन हैं",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "कोई मजाक सुनाओ प्लीज़",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "क्या आपको पसंद है",
+      "language": "hi",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "मौसम कैसा है",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "फ्लाइट बुक कर दो",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "इसका अनुवाद कर दो",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "एक कविता लिखो",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "सात बजे अलार्म लगा दो",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "कोई गाना चलाओ",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "पासा बनाने की विधि बताओ",
+      "language": "hi",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "नजदीकी बैंक कहाँ है",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "मेरी फोन बैटरी जल्दी खत्म हो रही है",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "मेरी जिम सदस्यता रद्द कर दो",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "मेरी फ्लाइट ट्रैक करो",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "कल मेरा दंत चिकित्सा अपॉइंटमेंट है",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "इंटरनेट राउटर रीसेट कर दो",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "एयरपोर्ट के लिए टैक्सी बुक करो",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "मेरा पासपोर्ट नवीनीकरण कर दो",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "फ्लाइट में सीट बदलनी है",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "मेरे पैरों में दर्द है",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "je veux un remboursement",
+      "language": "hi",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "ich mochte gerne eine rueckgabe",
+      "language": "hi",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "hogy vagy ma",
+      "language": "hi",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "मेरा सामान कहाँ है",
+      "language": "hi",
+      "kind": "other_domain"
+    },
+    {
+      "text": "हाँ",
+      "language": "hi",
+      "kind": "short_long"
+    },
+    {
+      "text": "नहीं",
+      "language": "hi",
+      "kind": "short_long"
+    },
+    {
+      "text": "अच्छा",
+      "language": "hi",
+      "kind": "short_long"
+    },
+    {
+      "text": "????",
+      "language": "es",
+      "kind": "gibberish"
+    },
+    {
+      "text": "ñññ",
+      "language": "es",
+      "kind": "gibberish"
+    },
+    {
+      "text": "aaaaa bbbbb",
+      "language": "es",
+      "kind": "gibberish"
+    },
+    {
+      "text": "qwerasdf zxcvbn",
+      "language": "es",
+      "kind": "gibberish"
+    },
+    {
+      "text": "jajajaja",
+      "language": "es",
+      "kind": "gibberish"
+    },
+    {
+      "text": "cuéntame un chiste",
+      "language": "es",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "cómo estás",
+      "language": "es",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "cómo te llamas",
+      "language": "es",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "muchas gracias",
+      "language": "es",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "quién eres",
+      "language": "es",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "eres muy simpático",
+      "language": "es",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "qué hora es",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "reserva un vuelo a Madrid",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "traduce esto al inglés",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "escribe un poema",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "pon una alarma a las siete",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "pon música",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "dame una receta de tortilla",
+      "language": "es",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "dónde está el banco más cercano",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "mi teléfono se queda sin batería",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "cancela mi membresía del gimnasio",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "rastrea mi vuelo",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "tengo cita con el dentista mañana",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "reinicia mi router",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "pide un taxi al aeropuerto",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "renueva mi pasaporte",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "cambia mi asiento de avión",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "me duele la espalda",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "ich möchte eine rückgabe",
+      "language": "es",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "vorrei un rimborso",
+      "language": "es",
+      "kind": "out_of_language"
+    },
+    {
+      "text": "dónde está mi paquete",
+      "language": "es",
+      "kind": "other_domain"
+    },
+    {
+      "text": "vale",
+      "language": "es",
+      "kind": "short_long"
+    },
+    {
+      "text": "ah ok",
+      "language": "es",
+      "kind": "short_long"
+    },
+    {
+      "text": "bhai kya haal hai",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": " batao yaar kuch",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "socho hai kya",
+      "language": "hinglish",
+      "kind": "gibberish"
+    },
+    {
+      "text": "kuch bhi nahi yaar bas",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "maujooda kai baar",
+      "language": "hinglish",
+      "kind": "gibberish"
+    },
+    {
+      "text": "sab kuch theek hai kya",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "naam kya hai tera",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "shukriya bhai bahut",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "joke sunao yaar",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "tum kaun ho",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "jaldi karo sab jaldi",
+      "language": "hinglish",
+      "kind": "gibberish"
+    },
+    {
+      "text": "kya kya bakwaas hai ye",
+      "language": "hinglish",
+      "kind": "chit_chat"
+    },
+    {
+      "text": "abhi kya time hua",
+      "language": "hinglish",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "flight book karwa do",
+      "language": "hinglish",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "hindi mein translate kar do",
+      "language": "hinglish",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "ek kavita likh do",
+      "language": "hinglish",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "subah saat ka alarm laga do",
+      "language": "hinglish",
+      "kind": "unrelated_task"
+    },
+    {
+      "text": "bank kahan hai sabse nazdeeki",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "phone ki battery jaldi khatam ho rahi",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "gym membership cancel kar do",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "meri flight track kar do",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "kal dentist ka appointment hai",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "wifi router reset kar do",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "airport ke liye taxi book karo",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "passport renew karwa do",
+      "language": "hinglish",
+      "kind": "other_domain"
+    },
+    {
+      "text": "12345",
+      "language": "en",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "98765",
+      "language": "en",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "2024",
+      "language": "en",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "3.14159",
+      "language": "en",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "१२३४५",
+      "language": "hi",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "९८७६५",
+      "language": "hi",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "२०२४",
+      "language": "hi",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "३.१४",
+      "language": "hi",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "12345",
+      "language": "es",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "98765",
+      "language": "es",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "2024",
+      "language": "es",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "3.14159",
+      "language": "es",
+      "kind": "numbers_only"
+    },
+    {
+      "text": "ok then",
+      "language": "es",
+      "kind": "short_long"
+    },
+    {
+      "text": "a ver",
+      "language": "es",
+      "kind": "short_long"
+    },
+    {
+      "text": "👍👍👍",
+      "language": "es",
+      "kind": "short_long"
+    },
+    {
+      "text": "vaya",
+      "language": "es",
+      "kind": "short_long"
+    },
+    {
+      "text": "कुछ नहीं",
+      "language": "hi",
+      "kind": "short_long"
+    },
+    {
+      "text": "चलो",
+      "language": "hi",
+      "kind": "short_long"
+    },
+    {
+      "text": "🙏",
+      "language": "hi",
+      "kind": "short_long"
+    },
+    {
+      "text": "अच्छा जी",
+      "language": "hi",
+      "kind": "short_long"
+    }
+  ],
+  "in_domain": [
+    {
+      "text": "wanna cancel my order plz",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "cancel my order its urgent",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "i wanna refund this",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "refund me pls",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "wherz my parcel",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "my order. where is it",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "yo i got charged 2 times",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "paymnt failed but money gone",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "money debited order confirm nahi hua",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "i need real human pls",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "get me someone from support team",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "hey there whats up",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "hello how r u",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "ok bye cya",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "thats all for today bye",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "he said he will call later bye",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "wanna know where my box is",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "how much time to deliver",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "my payment link is not opening",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "got the refund yet?",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "can i speak to an agent",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "MERI ORDER KAHAN HAI",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "order 55210 is still not delivered",
+      "language": "en",
+      "kind": "control"
+    },
+    {
+      "text": "मेरा ऑर्डर रद्द कर दो प्लीज",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "कैंसिल करना है ऑर्डर",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "पैसे वापस कर दो यार",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "रिफंड कितने दिन में आएगा",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "मेरा पार्सल कहाँ है भाई",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "डिलीवरी कब तक होगी",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "पैसा दोबारा कट गया",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "पेमेंट हो गया पर ऑर्डर नहीं बना",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "मुझे असली इंसान से बात करनी है",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "एजेंट से बात कराओ",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "नमस्ते क्या हाल",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "जी हाँ कैसे हो",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "अच्छा फिर मिलेंगे",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "बाय भाई शुक्रिया",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "मेरा ऑर्डर कहाँ है यार जल्दी बताओ",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "कितने दिन में आएगा",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "पेमेंट लिंक नहीं खुल रहा",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "रिफंड मिला या नहीं",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "हेलो क्या हाल है",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "माझा ऑर्डर कधी येतो",
+      "language": "hi",
+      "kind": "control"
+    },
+    {
+      "text": "quiero cancelar mi pedido porfa",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "could you cancel my order pls",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "quiero que me devuelvan mi dinero",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "cuando me devuelven el dinero",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "donde anda mi paquete",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "cuando me llega esto",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "me cobró el dinero dos veces",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "el pago salio pero no hay pedido",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "quiero hablar con una persona real por favor",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "pásame con un agente",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "holaa que tal",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "buenas friend",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "nos vemos luego entonces",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "chao muchas gracias",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "oye donde esta mi pedido porfa",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "cuantos dias tarda el envio",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "no me abre el link de pago",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "ya me devolvieron el importe",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "hola que onda",
+      "language": "es",
+      "kind": "control"
+    },
+    {
+      "text": "mi pedido sigue sin llegar",
+      "language": "es",
+      "kind": "control"
+    }
+  ]
+}
